@@ -61,7 +61,7 @@ The list of package functions is as follows:
 
 \code{\link{Mod4.stat}}
 
-\code{\link{Mod4cv}}
+\code{\link{Mod4.cv}}
 
 \code{\link{Mod4.pvalue}}
 
@@ -97,7 +97,7 @@ The list of package functions is as follows:
 
 \code{\link{Lms4.stat}}
 
-\code{\link{Lms4cv}}
+\code{\link{Lms4.cv}}
 
 \code{\link{Lms4.pvalue}}
 

@@ -1,5 +1,5 @@
 
-# PSIndependenceTest: Independence tests for two-way, three-way anf four-way contingency table
+# PSIndependenceTest: Independence Tests For Two-way, Three-way anf Four-way Contingency Table
 
 **author: Piotr Sulewski, Pomeranian University** <!-- badges: start -->
 <!-- badges: end -->

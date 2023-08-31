@@ -1,10 +1,10 @@
 Package: PSIndependenceTest
-Title: Indpendence tests for two-way, three-way and four-way contingency tables
+Title: Independence Tests For Two-way, Three-way and Four-way Contingency Tables
 Version: 0.0.2
 Authors@R: 
     person("Piotr", "Sulewski", , "piotr.sulewski@apsl.edu.pl", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-0788-6567"))
-Description: The PSIndependenceTest package presents two indpendence tests for two-way, three-way and four-way contingency tables. These tests are: the modular test and the logarithmic minimum test.  
+Description: The PSIndependenceTest package presents two independence tests for two-way, three-way and four-way contingency tables. These tests are: the modular test and the logarithmic minimum test.  
 Depends:
     R (>= 3.5.0)
 License: GPL-3
