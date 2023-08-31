@@ -30,7 +30,7 @@ Sulewski, P. (2021). Logarithmic Minimum Test for Independence in Three Way Con-
 You can install the development version of **PSIndependenceTest** from [GitHub](https://github.com/) with:
 
 ```{r}
-library(remotes)
+library("remotes")
 remotes::install_github("PiotrSule/PSIndependenceTest")
 ```
 
