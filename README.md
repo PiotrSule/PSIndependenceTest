@@ -1,15 +1,15 @@
 
-# PSIndependenceTest: Independence Tests For Two-way, Three-way anf Four-way Contingency Table
+# PSIndependenceTest: Independence Tests For Two-way, Three-way And Four-way Contingency Tables
 
 **author: Piotr Sulewski, Pomeranian University** <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of the PSIndependenceTest package is to put into practice the
-modular and logarithmic minimum tests for independence in two-way,
-three-way and four-way contingency tables. Statistic value, cv value and
-p-value are calculated. This package also includes three table
-generation functions and six data sets. To read more about the package
-please see (and cite :)) papers:
+The goal of the package is to put into practice the modular and
+logarithmic minimum tests for independence in two-way, three-way and
+four-way contingency tables. Statistic value, cv value and p-value are
+calculated. This package also includes three table generation functions
+and six data sets. To read more about the package please see (and cite
+:)) papers:
 
 Sulewski, P. (2016). Moc testów niezależności w tablicy dwudzielczej
 większej niż 2×2. Przegląd statystyczny 63(2), 190-210.
@@ -33,18 +33,8 @@ You can install the development version of **PSIndependenceTest** from
 ``` r
 library(remotes)
 remotes::install_github("PiotrSule/PSIndependenceTest")
-#> Downloading GitHub repo PiotrSule/PSIndependenceTest@HEAD
-#> ── R CMD build ─────────────────────────────────────────────────────────────────
-#>       ✔  checking for file 'C:\Users\piotr\AppData\Local\Temp\RtmpUNddpB\remotes33a43c1947b3\PiotrSule-PsIndependenceTest-4b83849/DESCRIPTION'
-#>       ─  preparing 'PSIndependenceTest':
-#>    checking DESCRIPTION meta-information ...     checking DESCRIPTION meta-information ...   ✔  checking DESCRIPTION meta-information
-#>       ─  checking for LF line-endings in source and make files and shell scripts
-#>   ─  checking for empty or unneeded directories
-#>   ─  building 'PSIndependenceTest_0.0.0.9000.tar.gz'
-#>      
-#> 
-#> Instalowanie pakietu w 'C:/Users/piotr/AppData/Local/R/win-library/4.3'
-#> (ponieważ 'lib' nie jest określony)
+#> Skipping install of 'PSIndependenceTest' from a github remote, the SHA1 (9fed97fa) has not changed since last install.
+#>   Use `force = TRUE` to force installation
 ```
 
 **This package includes four data sets**
@@ -101,14 +91,14 @@ Carlo method
 ``` r
 GenTab2(matrix(1/8, nrow = 2, ncol = 4), 50)
 #>      [,1] [,2] [,3] [,4]
-#> [1,]    4    7    4    4
-#> [2,]    8    4    7   12
+#> [1,]    4    7    7   12
+#> [2,]    4    6    6    4
 GenTab2(matrix(1/12, nrow = 4, ncol = 3), 60)
 #>      [,1] [,2] [,3]
-#> [1,]    7    4    4
-#> [2,]    9    3    5
-#> [3,]    2    6    1
-#> [4,]    6    7    6
+#> [1,]    2    7    6
+#> [2,]    8    3    8
+#> [3,]    4    4    6
+#> [4,]    5    4    3
 ```
 
 **Mod2.stat**
@@ -120,7 +110,7 @@ test in the two-way contingency table.
 Mod2.stat(table1)
 #> [1] 1.273572
 Mod2.stat(GenTab2(matrix(1/12, nrow = 3, ncol = 4), 60))
-#> [1] 3.388235
+#> [1] 3.22124
 ```
 
 **Mod2.cv**
@@ -129,10 +119,10 @@ This function returns the critical value of the modular independence
 test in the two-way contingency table.
 
 ``` r
-Mod2.cv(2, 2, 40, 0.05) #related to table1
-#> [1] 1.265177
-Mod2.cv(2, 3, 25, 0.1, B = 5*1e4) #related to table2
-#> [1] 2.532468
+Mod2.cv(2, 2, 40, 0.05, B = 1e3) 
+#> [1] 1.25
+Mod2.cv(2, 3, 25, 0.1, B = 1e4) 
+#> [1] 2.543885
 ```
 
 **Mod2.pvalue**
@@ -141,10 +131,10 @@ This function returns the p-value of the modular independence test in
 the two-way contingency table.
 
 ``` r
-Mod2.pvalue(Mod2.stat(table1), 2, 2, 40)
-#> [1] 0.04789521
-Mod2.pvalue(Mod2.stat(table2), 2, 3, 40, B = 5*1e3)
-#> [1] 0.00039992
+Mod2.pvalue(Mod2.stat(table1), 2, 2, 40, B = 1e3)
+#> [1] 0.05994006
+Mod2.pvalue(Mod2.stat(table2), 2, 3, 40, B = 1e4)
+#> [1] 0.00049995
 ```
 
 **Mod2.test**
@@ -153,18 +143,18 @@ This function returns the test statistic and p-value of the logarithmic
 minimum independence test in the two-way contingency table.
 
 ``` r
-Mod2.test(table1)
+Mod2.test(table1, B = 1e3)
 #> 
 #>  Modular test for independence in two-way contingency table
 #> 
 #> data:  table1
-#> D = 1.2736, p-value = 0.0463
-Mod2.test(table1, B = 7*1e3)
+#> D = 1.2736, p-value = 0.05
+Mod2.test(table1, B = 1e4)
 #> 
 #>  Modular test for independence in two-way contingency table
 #> 
 #> data:  table1
-#> D = 1.2736, p-value = 0.0471
+#> D = 1.2736, p-value = 0.0457
 ```
 
 **Lms2.stat**
@@ -176,7 +166,7 @@ independence test in the two-way contingency table.
 Lms2.stat(table1)
 #> [1] 1.660665
 Lms2.stat(GenTab2(matrix(1/12, nrow = 3, ncol = 4), 60))
-#> [1] 3.308379
+#> [1] 2.981018
 ```
 
 **Lms2.cv**
@@ -185,10 +175,10 @@ This function returns the critical value of the logarithmic minimum
 independence test in the two-way contingency table.
 
 ``` r
-Lms2.cv(2, 2, 40, 0.05) #related to table1
-#> [1] 1.317246
-Lms2.cv(2, 3, 25, 0.1, B = 5*1e4) #related to table2
-#> [1] 3.033369
+Lms2.cv(2, 2, 40, 0.05, B = 1e3) 
+#> [1] 1.268456
+Lms2.cv(2, 3, 25, 0.1, B = 1e4) 
+#> [1] 3.054568
 ```
 
 **Lms2.pvalue**
@@ -197,10 +187,10 @@ This function returns the p-value of the logarithmic minimum
 independence test in the two-way contingency table.
 
 ``` r
-Lms2.pvalue(Lms2.stat(table1), 2, 2, 40)
-#> [1] 0.02009799
-Lms2.pvalue(Lms2.stat(table2), 2, 3, 40, B = 5*1e3)
-#> [1] 0
+Lms2.pvalue(Lms2.stat(table1), 2, 2, 40, B = 1e3)
+#> [1] 0.01598402
+Lms2.pvalue(Lms2.stat(table2), 2, 3, 40, B = 1e4)
+#> [1] 0.00019998
 ```
 
 **Lms2.test**
@@ -209,18 +199,18 @@ This function returns the test statistic and p-value of the logarithmic
 minimum independence test in the two-way contingency table.
 
 ``` r
-Lms2.test(table1)
+Lms2.test(table1, B = 1e3)
 #> 
 #>  Modular test for independence in two-way contingency table
 #> 
 #> data:  table1
-#> D = 1.6607, p-value = 0.0182
-Lms2.test(table1, B = 7*1e3)
+#> D = 1.6607, p-value = 0.018
+Lms2.test(table1, B = 1e4)
 #> 
 #>  Modular test for independence in two-way contingency table
 #> 
 #> data:  table1
-#> D = 1.6607, p-value = 0.0183
+#> D = 1.6607, p-value = 0.0184
 ```
 
 **GenTab3**
@@ -233,38 +223,38 @@ GenTab3(array(1/12, dim=c(2,2,3)), 60)
 #> , , 1
 #> 
 #>      [,1] [,2]
-#> [1,]    9    5
-#> [2,]    3    6
+#> [1,]    8    5
+#> [2,]    6    5
 #> 
 #> , , 2
 #> 
 #>      [,1] [,2]
-#> [1,]    5    5
-#> [2,]    4    6
+#> [1,]    6    4
+#> [2,]    2    8
 #> 
 #> , , 3
 #> 
 #>      [,1] [,2]
-#> [1,]    5    5
-#> [2,]    3    4
+#> [1,]    3    6
+#> [2,]    2    5
 GenTab3(array(1/18, dim=c(2,3,3)), 80)
 #> , , 1
 #> 
 #>      [,1] [,2] [,3]
-#> [1,]    3    8    5
-#> [2,]    2    3    4
+#> [1,]    5    2    8
+#> [2,]    2    5    3
 #> 
 #> , , 2
 #> 
 #>      [,1] [,2] [,3]
-#> [1,]    5    8    7
-#> [2,]    3    6    2
+#> [1,]    5    4    1
+#> [2,]    4    4    5
 #> 
 #> , , 3
 #> 
 #>      [,1] [,2] [,3]
-#> [1,]    2    7    5
-#> [2,]    4    3    3
+#> [1,]    6    5    9
+#> [2,]    1    5    6
 ```
 
 **Mod3.stat**
@@ -276,7 +266,7 @@ test in the three-way contingency table.
 Mod3.stat(table3)
 #> [1] 2.641208
 Mod3.stat(GenTab3(array(1/12, dim=c(2,2,3)), 60))
-#> [1] 3.137807
+#> [1] 2.714127
 ```
 
 **Mod3.cv**
@@ -285,10 +275,10 @@ This function returns the critical value of the modular independence
 test in the three-way contingency table.
 
 ``` r
-Mod3.cv(2, 3, 4, 100, 0.05) #related to table4
-#> [1] 10.64241
-Mod3.cv(2, 3, 4, 100, 0.1, B = 5*1e3) #related to table4
-#> [1] 9.984984
+Mod3.cv(2, 3, 4, 100, 0.05, B = 1e3) 
+#> [1] 10.52972
+Mod3.cv(2, 3, 4, 100, 0.1, B = 1e4) 
+#> [1] 10.04156
 ```
 
 **Mod3.pvalue**
@@ -297,10 +287,10 @@ This function returns the p-value of the modular independence test in
 the three-way contingency table.
 
 ``` r
-Mod3.pvalue(Mod3.stat(table4), 2, 3, 4, 100)
-#> [1] 0.2009799
-Mod3.pvalue(Mod3.stat(table4), 2, 3, 4, 100, B = 5*1e3)
-#> [1] 0.2011598
+Mod3.pvalue(Mod3.stat(table4), 2, 3, 4, 100, B = 1e3)
+#> [1] 0.1898102
+Mod3.pvalue(Mod3.stat(table4), 2, 3, 4, 100, B = 1e4)
+#> [1] 0.2042796
 ```
 
 **Mod3.test**
@@ -309,18 +299,18 @@ This function returns the test statistic and p-value of the modular
 independence test in the three-way contingency table.
 
 ``` r
-Mod3.test(table4)
+Mod3.test(table4, B = 1e3)
 #> 
 #>  Modular test for independence in three-way contingency table
 #> 
 #> data:  table4
-#> D = 9.3451, p-value = 0.2075
-Mod3.test(table4, B = 5*1e3)
+#> D = 9.3451, p-value = 0.208
+Mod3.test(table4, B = 1e4)
 #> 
 #>  Modular test for independence in three-way contingency table
 #> 
 #> data:  table4
-#> D = 9.3451, p-value = 0.2047
+#> D = 9.3451, p-value = 0.2032
 ```
 
 **Lms3.stat**
@@ -332,7 +322,7 @@ independence test in the three-way contingency table.
 Lms3.stat(table4)
 #> [1] 10.12261
 Lms3.stat(GenTab3(array(1/27, dim = c(3, 3, 3)), 100))
-#> [1] 20.557
+#> [1] 9.867053
 ```
 
 **Lms3.cv**
@@ -341,10 +331,10 @@ This function returns the critical value of the logarithmic minimum
 independence test in the three-way contingency table.
 
 ``` r
-Lms3.cv(2, 3, 4, 100, 0.05) #related to table4
-#> [1] 22.89619
-Lms3.cv(2, 3, 4, 100, 0.1, B = 5*1e3) #related to table4
-#> [1] 20.64202
+Lms3.cv(2, 3, 4, 100, 0.05, B = 1e3) 
+#> [1] 23.03878
+Lms3.cv(2, 3, 4, 100, 0.1, B = 1e4) 
+#> [1] 20.82746
 ```
 
 **Lms3.pvalue**
@@ -353,10 +343,10 @@ This function returns the p-value of the logarithmic minimum
 independence test in the three-way contingency table.
 
 ``` r
-Lms3.pvalue(Lms3.stat(table4), 2, 3, 4, 100)
-#> [1] 0.4172583
-Lms3.pvalue(Lms3.stat(table4), 2, 3, 4, 40, B = 5*1e3)
-#> [1] 0.9982004
+Lms3.pvalue(Lms3.stat(table4), 2, 3, 4, 100, B = 1e3)
+#> [1] 0.4275724
+Lms3.pvalue(Lms3.stat(table4), 2, 3, 4, 40, B = 1e4)
+#> [1] 0.9975002
 ```
 
 **Lms3.test**
@@ -365,20 +355,20 @@ This function returns the test statistic and p-value of the logarithmic
 minimum independence test in the three-way contingency table.
 
 ``` r
-Lms3.test(table4)
+Lms3.test(table4, B = 1e3)
 #> 
 #>  Logarithmic minimum test for independence in three-way contingency
 #>  table
 #> 
 #> data:  table4
-#> D = 10.123, p-value = 0.4132
-Lms3.test(table4, B = 3*1e3)
+#> D = 10.123, p-value = 0.4184
+Lms3.test(table4, B = 1e4)
 #> 
 #>  Logarithmic minimum test for independence in three-way contingency
 #>  table
 #> 
 #> data:  table4
-#> D = 10.123, p-value = 0.4228
+#> D = 10.123, p-value = 0.4182
 ```
 
 **GenTab4**
@@ -391,62 +381,62 @@ GenTab4(array(1/16, dim=c(2,2,2,2)), 100)
 #> , , 1, 1
 #> 
 #>      [,1] [,2]
-#> [1,]    5    5
-#> [2,]    9    3
+#> [1,]    4    5
+#> [2,]    9    6
 #> 
 #> , , 2, 1
 #> 
 #>      [,1] [,2]
-#> [1,]    6    6
-#> [2,]    8    4
+#> [1,]    8    6
+#> [2,]    7    5
 #> 
 #> , , 1, 2
 #> 
 #>      [,1] [,2]
-#> [1,]    6    5
-#> [2,]    5    8
+#> [1,]    6    6
+#> [2,]    4    6
 #> 
 #> , , 2, 2
 #> 
 #>      [,1] [,2]
-#> [1,]    6    8
-#> [2,]   11    5
+#> [1,]    8    9
+#> [2,]    3    8
 GenTab4(array(1/36, dim=c(2,3,2,3)), 150)
 #> , , 1, 1
 #> 
 #>      [,1] [,2] [,3]
-#> [1,]    4    5    4
-#> [2,]    5    7    6
+#> [1,]    7    4    6
+#> [2,]    6    6    5
 #> 
 #> , , 2, 1
 #> 
 #>      [,1] [,2] [,3]
-#> [1,]    6    2    5
-#> [2,]    2    3    6
+#> [1,]    4    2    6
+#> [2,]    3    3    1
 #> 
 #> , , 1, 2
 #> 
 #>      [,1] [,2] [,3]
-#> [1,]    6    5    5
-#> [2,]    5    5    5
+#> [1,]    6    2    7
+#> [2,]    6    6    3
 #> 
 #> , , 2, 2
 #> 
 #>      [,1] [,2] [,3]
-#> [1,]    5    1    1
-#> [2,]    2    2    4
+#> [1,]    4    3    4
+#> [2,]    1    4    6
 #> 
 #> , , 1, 3
 #> 
 #>      [,1] [,2] [,3]
-#> [1,]    1    0    5
-#> [2,]    7    5    1
+#> [1,]    5    4    2
+#> [2,]    1    3    5
 #> 
 #> , , 2, 3
 #> 
 #>      [,1] [,2] [,3]
-#> [1,]    2    6    5
-#> [2,]    3    4   10
+#> [1,]    7    6    3
+#> [2,]    4    1    4
 ```
 
 **Mod4.stat**
@@ -467,10 +457,10 @@ This function returns the critical value of the modular independence
 test in the four-way contingency table.
 
 ``` r
-Mod4.cv(2, 2, 2, 2, 100, 0.05) #related to table6
-#> [1] 5.951398
-Mod4.cv(2, 2, 2, 2, 100, 0.1, B = 5*1e3) #related to table6
-#> [1] 5.564614
+Mod4.cv(2, 2, 2, 2, 100, 0.05, B = 1e3)
+#> [1] 5.921911
+Mod4.cv(2, 2, 2, 2, 100, 0.1, B = 1e4)
+#> [1] 5.605168
 ```
 
 **Mod4.pvalue**
@@ -479,9 +469,9 @@ This function returns the p-value of the modular independence test in
 the four-way contingency table.
 
 ``` r
-Mod4.pvalue(Mod4.stat(table6), 2, 2, 2, 2, 100)
+Mod4.pvalue(Mod4.stat(table6), 2, 2, 2, 2, 100, B = 1e3)
 #> [1] 0
-Mod4.pvalue(Mod4.stat(table6), 2, 2, 2, 2, 100, B = 5*1e3)
+Mod4.pvalue(Mod4.stat(table6), 2, 2, 2, 2, 100, B = 1e4)
 #> [1] 0
 ```
 
@@ -491,13 +481,13 @@ This function returns the test statistic and p-value of the modular
 independence test in the -way contingency table.
 
 ``` r
-Mod4.test(table6)
+Mod4.test(table6, B = 1e3)
 #> 
 #>  Modular test for independence in four-way contingency table
 #> 
 #> data:  table6
 #> D = 17.816, p-value < 2.2e-16
-Mod4.test(table6, B = 5*1e3)
+Mod4.test(table6, B = 1e4)
 #> 
 #>  Modular test for independence in four-way contingency table
 #> 
@@ -523,10 +513,10 @@ This function returns the critical value of the logarithmic minimum
 independence test in the four-way contingency table.
 
 ``` r
-Lms4.cv(2, 2, 2, 2, 100, 0.05) #related to table6
-#> [1] 3.906076
-Lms4.cv(2, 2, 2, 2, 100, 0.1, B = 5*1e3) #related to table6
-#> [1] 3.428901
+Lms4.cv(2, 2, 2, 2, 100, 0.05, B = 1e3) 
+#> [1] 3.933356
+Lms4.cv(2, 2, 2, 2, 100, 0.1, B = 1e4) 
+#> [1] 3.435829
 ```
 
 **Lms4.pvalue**
@@ -535,9 +525,9 @@ This function returns the p-value of the logarithmic minimum
 independence test in the four-way contingency table.
 
 ``` r
-Lms4.pvalue(Lms4.stat(table6), 2, 2, 2, 2, 100)
+Lms4.pvalue(Lms4.stat(table6), 2, 2, 2, 2, 100, B = 1e3)
 #> [1] 0
-Lms4.pvalue(Lms4.stat(table6), 2, 2, 2, 2, 100, B = 5*1e3)
+Lms4.pvalue(Lms4.stat(table6), 2, 2, 2, 2, 100, B = 1e4)
 #> [1] 0
 ```
 
@@ -547,13 +537,13 @@ This function returns the test statistic and p-value of the logarithmic
 minimum independence test in the four-way contingency table.
 
 ``` r
-Lms4.test(table6)
+Lms4.test(table6, B = 1e3)
 #> 
 #>  Logarithmic minimum test for independence in four-way contingency table
 #> 
 #> data:  table6
-#> D = 37.498, p-value < 2.2e-16
-Lms4.test(table6, B = 3*1e3)
+#> D = 37.498, p-value = 9.999e-05
+Lms4.test(table6, B = 1e4)
 #> 
 #>  Logarithmic minimum test for independence in four-way contingency table
 #> 

@@ -14,13 +14,12 @@ knitr::opts_chunk$set(
 )
 ```
 
-
-# PSIndependenceTest: Independence tests for two-way, three-way anf four-way contingency table
+# PSIndependenceTest: Independence Tests For Two-way, Three-way And Four-way Contingency Tables
 **author: Piotr Sulewski, Pomeranian University**
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of the PSIndependenceTest package is to put into practice the modular and logarithmic minimum tests for independence in two-way, three-way and four-way contingency tables. Statistic value, cv value and p-value are calculated. This package also includes three table generation functions and six data sets. To read more about the package please see (and cite :)) papers:
+The goal of the package is to put into practice the modular and logarithmic minimum tests for independence in two-way, three-way and four-way contingency tables. Statistic value, cv value and p-value are calculated. This package also includes three table generation functions and six data sets. To read more about the package please see (and cite :)) papers:
 
 Sulewski, P. (2016). Moc testów niezależności w tablicy dwudzielczej większej niż 2×2. Przegląd statystyczny 63(2), 190-210.
 
@@ -32,12 +31,10 @@ Sulewski, P. (2021). Logarithmic Minimum Test for Independence in Three Way Con-
 
 ## Installation
 
-
 You can install the development version of **PSIndependenceTest** from [GitHub](https://github.com/) with:
 
-
-``` r
-library("remotes")
+```{r}
+library(remotes)
 remotes::install_github("PiotrSule/PSIndependenceTest")
 ```
 
@@ -89,8 +86,8 @@ Mod2.stat(GenTab2(matrix(1/12, nrow = 3, ncol = 4), 60))
 This function returns the critical value of the modular independence test in the two-way contingency table.
 
 ```{r}
-Mod2.cv(2, 2, 40, 0.05, B = 1e3) #related to table1
-Mod2.cv(2, 3, 25, 0.1, B = 1e4) #related to table2
+Mod2.cv(2, 2, 40, 0.05, B = 1e3) 
+Mod2.cv(2, 3, 25, 0.1, B = 1e4) 
 ```
 
 **Mod2.pvalue**
@@ -98,7 +95,7 @@ Mod2.cv(2, 3, 25, 0.1, B = 1e4) #related to table2
 This function returns the p-value of the modular independence test in the two-way contingency table.
 
 ```{r}
-Mod2.pvalue(Mod2.stat(table2), 2, 2, 40, B = 1e3)
+Mod2.pvalue(Mod2.stat(table1), 2, 2, 40, B = 1e3)
 Mod2.pvalue(Mod2.stat(table2), 2, 3, 40, B = 1e4)
 ```
 
@@ -125,8 +122,8 @@ Lms2.stat(GenTab2(matrix(1/12, nrow = 3, ncol = 4), 60))
 This function returns the critical value of the logarithmic minimum independence test in the two-way contingency table.
 
 ```{r}
-Lms2.cv(2, 2, 40, 0.05, B = 1e3) #related to table1
-Lms2.cv(2, 3, 25, 0.1, B = 1e4) #related to table2
+Lms2.cv(2, 2, 40, 0.05, B = 1e3) 
+Lms2.cv(2, 3, 25, 0.1, B = 1e4) 
 ```
 
 **Lms2.pvalue**
@@ -170,8 +167,8 @@ Mod3.stat(GenTab3(array(1/12, dim=c(2,2,3)), 60))
 This function returns the critical value of the modular independence test in the three-way contingency table.
 
 ```{r}
-Mod3.cv(2, 3, 4, 100, 0.05, B = 1e3) #related to table4
-Mod3.cv(2, 3, 4, 100, 0.1, B = 1e4) #related to table4
+Mod3.cv(2, 3, 4, 100, 0.05, B = 1e3) 
+Mod3.cv(2, 3, 4, 100, 0.1, B = 1e4) 
 ```
 
 **Mod3.pvalue**
@@ -206,8 +203,8 @@ Lms3.stat(GenTab3(array(1/27, dim = c(3, 3, 3)), 100))
 This function returns the critical value of the logarithmic minimum independence test in the three-way contingency table.
 
 ```{r}
-Lms3.cv(2, 3, 4, 100, 0.05, B = 1e3) #related to table4
-Lms3.cv(2, 3, 4, 100, 0.1, B = 1e4) #related to table4
+Lms3.cv(2, 3, 4, 100, 0.05, B = 1e3) 
+Lms3.cv(2, 3, 4, 100, 0.1, B = 1e4) 
 ```
 
 **Lms3.pvalue**
@@ -251,8 +248,8 @@ Mod4.stat(table6)
 This function returns the critical value of the modular independence test in the four-way contingency table.
 
 ```{r}
-Mod4.cv(2, 2, 2, 2, 100, 0.05, B = 1e3) #related to table6
-Mod4.cv(2, 2, 2, 2, 100, 0.1, B = 1e4) #related to table6
+Mod4.cv(2, 2, 2, 2, 100, 0.05, B = 1e3)
+Mod4.cv(2, 2, 2, 2, 100, 0.1, B = 1e4)
 ```
 
 **Mod4.pvalue**
@@ -287,8 +284,8 @@ Lms4.stat(table6)
 This function returns the critical value of the logarithmic minimum independence test in the four-way contingency table.
 
 ```{r}
-Lms4.cv(2, 2, 2, 2, 100, 0.05, B = 1e3) #related to table6
-Lms4.cv(2, 2, 2, 2, 100, 0.1, B = 1e4) #related to table6
+Lms4.cv(2, 2, 2, 2, 100, 0.05, B = 1e3) 
+Lms4.cv(2, 2, 2, 2, 100, 0.1, B = 1e4) 
 ```
 
 **Lms4.pvalue**
@@ -308,4 +305,3 @@ This function returns the test statistic and p-value of the logarithmic minimum 
 Lms4.test(table6, B = 1e3)
 Lms4.test(table6, B = 1e4)
 ```
-
