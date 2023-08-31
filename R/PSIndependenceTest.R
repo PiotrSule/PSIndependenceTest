@@ -81,7 +81,7 @@
 #'
 #' \code{\link{Lms4.stat}}
 #'
-#' \code{\link{Lms.4cv}}
+#' \code{\link{Lms4.cv}}
 #'
 #' \code{\link{Lms4.pvalue}}
 #'
