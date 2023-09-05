@@ -57,7 +57,7 @@
 #'
 #' \code{\link{Mod4.test}}
 #'
-#' @section Functions for the logarithmic minimum independence test and two-way contingency: table
+#' @section Functions for the logarithmic minimum independence test and two-way contingency table:
 #'
 #' \code{\link{Lms2.stat}}
 #'

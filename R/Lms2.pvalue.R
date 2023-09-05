@@ -21,8 +21,8 @@
 #' {Sulewski, P. (2019). \emph{The LMS for Testing Independence in Two-way Contingency Tables.} Biometrical Letters 56(1), 17-43}
 #'
 #' @examples
-#' Lms2.pvalue(Lms2.stat(table1), 6, 2, 93) #related to table1
-#' Lms2.pvalue(1.949, 3, 2, 150, 5000)
+#' Lms2.pvalue(Lms2.stat(table1), 6, 2, 93)
+#' Lms2.pvalue(1.949, 3, 2, 150, B=5e3)
 #'
 #' @export
 
@@ -39,7 +39,7 @@ Lms2.pvalue <- function(stat, nr, nc, n, B = 1e4) {
   Q <- sort(Q)
   poz <- B+1
   for (i in B:1) {
-    if (Q[i] > stat) poz = i
+    if (Q[i] > stat) poz = i else break
   }
   return(1 - CDF[poz])
 }

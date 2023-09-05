@@ -1,7 +1,6 @@
-# Package update 0.0.1 -> 0.0.2
+# Package version 0.0.1 
 
-Improvements: 
-* New data set is added (table6)
+* This is the first version of the package.
 
 
 

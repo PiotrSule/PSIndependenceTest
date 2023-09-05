@@ -23,8 +23,8 @@
 #'
 #' @examples
 #' tab7 = GenTab3(array(0.125, dim = c(2, 2, 2)), 100)
-#' Mod3.pvalue(Mod3.stat(tab7), 2, 2, 2, 100)
-#' Mod3.pvalue(1.333, 2, 3, 4, 200, 8*1e3)
+#' Mod3.pvalue(Mod3.stat(tab7), 2, 2, 2, 100, B=1e3)
+#' Mod3.pvalue(1.333, 2, 3, 4, 200, B=6*1e3)
 #'
 #' @export
 
@@ -41,7 +41,7 @@ Mod3.pvalue <- function(stat, nr, nc, nt, n, B = 1e4) {
   Q <- sort(Q)
   poz <- B + 1
   for (i in B:1) {
-    if (Q[i] > stat) poz = i
+    if (Q[i] > stat) poz = i else break
   }
   return(1 - CDF[poz])
 }

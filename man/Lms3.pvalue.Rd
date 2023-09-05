@@ -28,7 +28,7 @@ The Critical value of the modular test for independence in r x c x t contingency
 \examples{
 tab1 = GenTab3(array(0.125, dim = c(2, 2, 2)), 100)
 Lms3.pvalue(Lms3.stat(tab1), 2, 2, 2, 100)
-Lms3.pvalue(1.333, 2, 3, 4, 200, 8*1e3)
+Lms3.pvalue(1.333, 2, 3, 4, 200, 1e3)
 
 }
 \references{

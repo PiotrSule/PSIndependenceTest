@@ -23,8 +23,8 @@
 #' @examples
 #' pij=matrix(1/4, nrow = 2, ncol = 2)
 #' tab4=GenTab2(pij, 30)
-#' Mod2.pvalue(Mod2.stat(tab4), 6, 2, 93)
-#' Mod2.pvalue(1.949, 3, 2, 150, 5000)
+#' Mod2.pvalue(Mod2.stat(tab4), 6, 2, 93, B=1e3)
+#' Mod2.pvalue(1.949, 3, 2, 150, B=7e3)
 #'
 #' @export
 
@@ -41,7 +41,7 @@ Mod2.pvalue <- function(stat, nr, nc, n, B = 1e4) {
   Q <- sort(Q)
   poz <- B+1
   for (i in B:1) {
-    if (Q[i] > stat) poz = i
+    if (Q[i] > stat) poz = i else break
   }
   return(1 - CDF[poz])
 }

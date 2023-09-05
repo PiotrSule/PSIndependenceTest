@@ -24,8 +24,8 @@
 #'
 #' @examples
 #' data = GenTab4(array(1/16, dim = c(2, 2, 2, 2)), 100)
-#' Mod4.pvalue(Mod4.stat(data), 2, 2, 2, 2, 100)
-#' Mod4.pvalue(2.333, 2, 2, 3, 3, 200, 4*1e3)
+#' Mod4.pvalue(Mod4.stat(data), 2, 2, 2, 2, 100, B=1e3)
+#' Mod4.pvalue(2.333, 2, 2, 3, 3, 200, B=5*1e3)
 #'
 #' @export
 
@@ -42,7 +42,7 @@ Mod4.pvalue <- function(stat, nr, nc, nt, nu, n, B = 1e4) {
   Q <- sort(Q)
   poz <- B + 1
   for (i in B:1) {
-    if (Q[i] > stat) poz = i
+    if (Q[i] > stat) poz = i else break
   }
   return(1 - CDF[poz])
 }
