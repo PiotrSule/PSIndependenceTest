@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# PSIndependenceTest: Independence Tests For Two-way, Three-way And Four-way Contingency Tables
+# PSIndependenceTest: Independence Tests for Two-way, Three-way and Four-way Contingency Tables
 **author: Piotr Sulewski, Pomeranian University**
 <!-- badges: start -->
 <!-- badges: end -->
@@ -31,9 +31,15 @@ Sulewski, P. (2021). Logarithmic Minimum Test for Independence in Three Way Con-
 
 ## Installation
 
+You can install the released version of **PSIndependenceTest** from CRAN with:
+
+``` r
+install.packages("PSIndependenceTest")
+```
+
 You can install the development version of **PSIndependenceTest** from [GitHub](https://github.com/) with:
 
-```{r}
+```r
 library("remotes")
 remotes::install_github("PiotrSule/PSIndependenceTest")
 ```
