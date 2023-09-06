@@ -5,7 +5,7 @@
 #' (see Sulewski P. (2018)).
 #'
 #' @param nijt a numeric matrix with non-negative values of the three-way contingency table cells
-#'
+#' @return The function returns the value of the logarithmic minimum test statistic.
 #' @rdname Lms3.stat
 #'
 #' @details

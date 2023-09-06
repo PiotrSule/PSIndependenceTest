@@ -1,4 +1,4 @@
-#' @title Logarithmic minimum test for independence in two-way contingency table
+#' @title Logarithmic Minimum Test for Independence in Two-Way Contingency Table
 #'
 #' @description
 #' Calculates the p-value of the logarithmic minimum test.
@@ -8,7 +8,7 @@
 #' @param nc a number of columns
 #' @param n a sample size
 #' @param B <optional> an integer specifying the number of replicates used in the Monte Carlo test
-#'
+#' @return The function returns the p-value of the logarithmic minimum test.
 #' @rdname Lms2.pvalue
 #'
 #' @details
@@ -21,8 +21,8 @@
 #' {Sulewski, P. (2019). \emph{The LMS for Testing Independence in Two-way Contingency Tables.} Biometrical Letters 56(1), 17-43}
 #'
 #' @examples
-#' Lms2.pvalue(Lms2.stat(table1), 6, 2, 93)
-#' Lms2.pvalue(1.949, 3, 2, 150, B=5e3)
+#' \donttest{Lms2.pvalue(Lms2.stat(table1), 6, 2, 93, B = 1e3)}
+#' \donttest{Lms2.pvalue(1.949, 3, 2, 150, B=1e3)}
 #'
 #' @export
 

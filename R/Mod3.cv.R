@@ -10,7 +10,7 @@
 #' @param n a sample size
 #' @param alfa a significance level
 #' @param B <optional> an integer specifying the number of replicates used in the Monte Carlo test
-#'
+#' @return The function returns the critical value of the modular test.
 #' @rdname Mod3.cv
 #'
 #' @details
@@ -23,8 +23,8 @@
 #' {Sulewski, P. (2018). \emph{Power Analysis Of Independence Testing for the Three-Way Con-tingency Tables of Small Sizes.} Journal of Applied Statistics 45(13), 2481-2498}
 #'
 #' @examples
-#' Mod3.cv(2, 3, 4, 200, 0.05)
-#' Mod3.cv(2, 2, 2, 100, 0.1, B = 2*1e4)
+#' \donttest{Mod3.cv(2, 3, 4, 200, 0.05, B = 1e3)}
+#' \donttest{Mod3.cv(2, 2, 2, 100, 0.1, B = 1e3)}
 #'
 #' @export
 

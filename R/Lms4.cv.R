@@ -10,7 +10,7 @@
 #' @param n a sample size
 #' @param alfa a significance level
 #' @param B (optional) an integer specifying the number of replicates used in the Monte Carlo test
-#'
+#' @return The function returns the critical value of the logarithmic minimum test.
 #' @rdname Lms4.cv
 #'
 #' @details
@@ -23,8 +23,8 @@
 #' Extension of the information contained in {Sulewski, P. (2021). \emph{Logarithmic Minimum Test for Independence in Three Way Con-tingency Table of Small Sizes,} Journal of Statistical Computation and Simulation 91(13), 2780-2799}
 #'
 #' @examples
-#' Lms4.cv(2, 2, 2, 3, 100, 0.05)
-#' Lms4.cv(2, 3, 2, 3, 100, 0.1, B = 6*1e3)
+#' \donttest{Lms4.cv(2, 2, 2, 3, 100, 0.05, B = 1e3)}
+#' \donttest{Lms4.cv(2, 3, 2, 3, 100, 0.1, B = 1e3)}
 #'
 #' @export
 

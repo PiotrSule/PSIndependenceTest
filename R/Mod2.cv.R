@@ -9,7 +9,7 @@
 #' @param n a sample size
 #' @param alfa a significance level
 #' @param B <optional> an integer specifying the number of replicates used in the Monte Carlo test
-#'
+#' @return The function returns the critical value of the modular test.
 #' @rdname Mod2.cv
 #'
 #' @details
@@ -23,8 +23,8 @@
 #' {Sulewski, P. (2016). \emph{Moc testów niezależności w tablicy dwudzielczej większej niż 2×2,} Przegląd statystyczny 63(2), 190-210}
 #'
 #' @examples
-#' Mod2.cv(6, 2, 93, 0.05)
-#' Mod2.cv(3, 2, 150, 0.1, B = 5*1e4)
+#' \donttest{Mod2.cv(6, 2, 93, 0.05, B = 1e3)}
+#' \donttest{Mod2.cv(3, 2, 150, 0.1, B = 1e3)}
 #'
 #' @export
 

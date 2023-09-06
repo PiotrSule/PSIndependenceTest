@@ -2,11 +2,10 @@
 #'
 #' @description
 #' Generating a two-way contingency table r x c
-#' (see Sulewski P. (2016)).
 #'
 #' @param pij a numeric matrix with non-negative probability values of the two-way contingency table
 #' @param n a sample size
-#'
+#' @return The function returns the two-way contingency table r x c
 #' @rdname GenTab2
 #'
 #' @details

@@ -1,11 +1,11 @@
-#' @title Logarithmic minimum test for independence in two-way contingency table
+#' @title Logarithmic Minimum Test for Independence in Two-Way Contingency Table
 #'
 #' @description
 #' Calculates the test statistic and p-value of the logarithmic minimum test.
 #'
 #' @param nij a numeric matrix with non-negative values of the two-way contingency table cells
 #' @param B <optional> an integer specifying the number of replicates used in the Monte Carlo test
-#'
+#' @return The function returns values of the test statistic and p-value of the logarithmic minimum test.
 #' @rdname Lms2.test
 #'
 #' @details
@@ -19,9 +19,9 @@
 #'
 #' @examples
 #' pij=matrix(1/6, nrow = 2, ncol = 3)
-#' Lms2.test(GenTab2(pij, 50))
+#' \donttest{Lms2.test(GenTab2(pij, 50), B = 1e3)}
 #' iris$size <- ifelse(iris$Sepal.Length < median(iris$Sepal.Length),"small", "big")
-#' Lms2.test(table(iris$Species, iris$size), B=1e3)
+#' \donttest{Lms2.test(table(iris$Species, iris$size), B=1e3)}
 #'
 #' @export
 

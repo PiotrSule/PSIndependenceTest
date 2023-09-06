@@ -1,11 +1,11 @@
 #' @title Four-way contingency table r x c x t x u   - generation
 #'
 #' @description
-#' Generating a four-way contingency table r x c x t x u (see Sulewski P. (2018)).
+#' Generating a four-way contingency table r x c x t x u.
 #'
 #' @param pijtu a numeric matrix with non-negative probability values of the four-way contingency table
 #' @param n a sample size
-#'
+#' @return The function returns the four-way contingency table r x c x t x u
 #' @rdname GenTab4
 #'
 #' @details

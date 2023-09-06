@@ -26,8 +26,8 @@ The p-value of the modular test for independence in r x c contingency table,
 \examples{
 pij=matrix(1/4, nrow = 2, ncol = 2)
 tab4=GenTab2(pij, 30)
-Mod2.pvalue(Mod2.stat(tab4), 6, 2, 93)
-Mod2.pvalue(1.949, 3, 2, 150, 5000)
+Mod2.pvalue(Mod2.stat(tab4), 6, 2, 93, B=1e3)
+Mod2.pvalue(1.949, 3, 2, 150, B=7e3)
 
 }
 \references{

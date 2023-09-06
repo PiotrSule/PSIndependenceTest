@@ -10,7 +10,7 @@
 #' @param nu a number of
 #' @param n a sample size
 #' @param B <optional> an integer specifying the number of replicates used in the Monte Carlo test
-#'
+#' @return The function returns the p-value of the logarithmic minimum test.
 #' @rdname Lms4.pvalue
 #'
 #' @details
@@ -24,8 +24,8 @@
 #'
 #' @examples
 #' data = GenTab4(array(1/16, dim = c(2, 2, 2, 2)), 100)
-#' Lms4.pvalue(Lms4.stat(data), 2, 2, 2, 2, 100, B=1e3)
-#' Lms4.pvalue(2.333, 2, 2, 3, 3, 200, B=5*1e3)
+#' \donttest{Lms4.pvalue(Lms4.stat(data), 2, 2, 2, 2, 100, B=1e3)}
+#' \donttest{Lms4.pvalue(2.333, 2, 2, 3, 3, 200, B=1e3)}
 #'
 #' @export
 

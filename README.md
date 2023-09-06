@@ -1,5 +1,5 @@
 
-# PSIndependenceTest: Independence Tests for Two-way, Three-way and Four-way Contingency Tables
+# PSIndependenceTest: Independence Tests for Two-Way, Three-Way and Four-Way Contingency Tables
 
 **author: Piotr Sulewski, Pomeranian University** <!-- badges: start -->
 <!-- badges: end -->
@@ -96,14 +96,14 @@ Carlo method
 ``` r
 GenTab2(matrix(1/8, nrow = 2, ncol = 4), 50)
 #>      [,1] [,2] [,3] [,4]
-#> [1,]    5    8    6    9
-#> [2,]    7    8    3    4
+#> [1,]    2    6    5    5
+#> [2,]    8   11    7    6
 GenTab2(matrix(1/12, nrow = 4, ncol = 3), 60)
 #>      [,1] [,2] [,3]
-#> [1,]    4    5    3
-#> [2,]    4    4    3
-#> [3,]    4    5    5
-#> [4,]    8   12    3
+#> [1,]    4    8    2
+#> [2,]    8    9    7
+#> [3,]    4    4    4
+#> [4,]    6    1    3
 ```
 
 **Mod2.stat**
@@ -115,7 +115,7 @@ test in the two-way contingency table.
 Mod2.stat(table1)
 #> [1] 1.273572
 Mod2.stat(GenTab2(matrix(1/12, nrow = 3, ncol = 4), 60))
-#> [1] 2.567228
+#> [1] 3.083585
 ```
 
 **Mod2.cv**
@@ -125,9 +125,9 @@ test in the two-way contingency table.
 
 ``` r
 Mod2.cv(2, 2, 40, 0.05, B = 1e3) 
-#> [1] 1.289377
+#> [1] 1.25
 Mod2.cv(2, 3, 25, 0.1, B = 1e4) 
-#> [1] 2.534722
+#> [1] 2.527473
 ```
 
 **Mod2.pvalue**
@@ -137,9 +137,9 @@ the two-way contingency table.
 
 ``` r
 Mod2.pvalue(Mod2.stat(table1), 2, 2, 40, B = 1e3)
-#> [1] 0.03996004
+#> [1] 0.05494505
 Mod2.pvalue(Mod2.stat(table2), 2, 3, 40, B = 1e4)
-#> [1] 0.00019998
+#> [1] 9.999e-05
 ```
 
 **Mod2.test**
@@ -153,13 +153,13 @@ Mod2.test(table1, B = 1e3)
 #>  Modular test for independence in two-way contingency table
 #> 
 #> data:  table1
-#> D = 1.2736, p-value = 0.05199
+#> D = 1.2736, p-value = 0.0468
 Mod2.test(table1, B = 1e4)
 #> 
 #>  Modular test for independence in two-way contingency table
 #> 
 #> data:  table1
-#> D = 1.2736, p-value = 0.0461
+#> D = 1.2736, p-value = 0.05009
 ```
 
 **Lms2.stat**
@@ -171,7 +171,7 @@ independence test in the two-way contingency table.
 Lms2.stat(table1)
 #> [1] 1.660665
 Lms2.stat(GenTab2(matrix(1/12, nrow = 3, ncol = 4), 60))
-#> [1] 4.223813
+#> [1] 3.45433
 ```
 
 **Lms2.cv**
@@ -181,9 +181,9 @@ independence test in the two-way contingency table.
 
 ``` r
 Lms2.cv(2, 2, 40, 0.05, B = 1e3) 
-#> [1] 1.453375
+#> [1] 1.317246
 Lms2.cv(2, 3, 25, 0.1, B = 1e4) 
-#> [1] 3.11341
+#> [1] 3.075669
 ```
 
 **Lms2.pvalue**
@@ -193,7 +193,7 @@ independence test in the two-way contingency table.
 
 ``` r
 Lms2.pvalue(Lms2.stat(table1), 2, 2, 40, B = 1e3)
-#> [1] 0.01398601
+#> [1] 0.01498501
 Lms2.pvalue(Lms2.stat(table2), 2, 3, 40, B = 1e4)
 #> [1] 0
 ```
@@ -209,13 +209,13 @@ Lms2.test(table1, B = 1e3)
 #>  Modular test for independence in two-way contingency table
 #> 
 #> data:  table1
-#> D = 1.6607, p-value = 0.0179
+#> D = 1.6607, p-value = 0.0187
 Lms2.test(table1, B = 1e4)
 #> 
 #>  Modular test for independence in two-way contingency table
 #> 
 #> data:  table1
-#> D = 1.6607, p-value = 0.0185
+#> D = 1.6607, p-value = 0.0183
 ```
 
 **GenTab3**
@@ -228,38 +228,38 @@ GenTab3(array(1/12, dim=c(2,2,3)), 60)
 #> , , 1
 #> 
 #>      [,1] [,2]
-#> [1,]    5    6
-#> [2,]    1    3
+#> [1,]    6    9
+#> [2,]    3    6
 #> 
 #> , , 2
 #> 
 #>      [,1] [,2]
-#> [1,]    5    7
-#> [2,]    5    2
+#> [1,]    4    1
+#> [2,]    9    4
 #> 
 #> , , 3
 #> 
 #>      [,1] [,2]
-#> [1,]    7    7
-#> [2,]    6    6
+#> [1,]    1    5
+#> [2,]    5    7
 GenTab3(array(1/18, dim=c(2,3,3)), 80)
 #> , , 1
 #> 
 #>      [,1] [,2] [,3]
-#> [1,]    5    4    6
-#> [2,]    1    4    3
+#> [1,]    7    4    8
+#> [2,]    4    4    4
 #> 
 #> , , 2
 #> 
 #>      [,1] [,2] [,3]
-#> [1,]    6    5    2
-#> [2,]    3    7    3
+#> [1,]    6    2    3
+#> [2,]    6   10    2
 #> 
 #> , , 3
 #> 
 #>      [,1] [,2] [,3]
-#> [1,]    7    4    3
-#> [2,]    6    6    5
+#> [1,]    5    5    1
+#> [2,]    2    3    4
 ```
 
 **Mod3.stat**
@@ -271,7 +271,7 @@ test in the three-way contingency table.
 Mod3.stat(table3)
 #> [1] 2.641208
 Mod3.stat(GenTab3(array(1/12, dim=c(2,2,3)), 60))
-#> [1] 2.273762
+#> [1] 2.968669
 ```
 
 **Mod3.cv**
@@ -281,9 +281,9 @@ test in the three-way contingency table.
 
 ``` r
 Mod3.cv(2, 3, 4, 100, 0.05, B = 1e3) 
-#> [1] 10.60124
+#> [1] 10.61046
 Mod3.cv(2, 3, 4, 100, 0.1, B = 1e4) 
-#> [1] 10.03901
+#> [1] 10.06833
 ```
 
 **Mod3.pvalue**
@@ -293,9 +293,9 @@ the three-way contingency table.
 
 ``` r
 Mod3.pvalue(Mod3.stat(table4), 2, 3, 4, 100, B = 1e3)
-#> [1] 0.2087912
+#> [1] 0.2057942
 Mod3.pvalue(Mod3.stat(table4), 2, 3, 4, 100, B = 1e4)
-#> [1] 0.2027797
+#> [1] 0.2016798
 ```
 
 **Mod3.test**
@@ -309,13 +309,13 @@ Mod3.test(table4, B = 1e3)
 #>  Modular test for independence in three-way contingency table
 #> 
 #> data:  table4
-#> D = 9.3451, p-value = 0.2067
+#> D = 9.3451, p-value = 0.2014
 Mod3.test(table4, B = 1e4)
 #> 
 #>  Modular test for independence in three-way contingency table
 #> 
 #> data:  table4
-#> D = 9.3451, p-value = 0.2027
+#> D = 9.3451, p-value = 0.2029
 ```
 
 **Lms3.stat**
@@ -327,7 +327,7 @@ independence test in the three-way contingency table.
 Lms3.stat(table4)
 #> [1] 10.12261
 Lms3.stat(GenTab3(array(1/27, dim = c(3, 3, 3)), 100))
-#> [1] 12.47266
+#> [1] 19.75725
 ```
 
 **Lms3.cv**
@@ -337,9 +337,9 @@ independence test in the three-way contingency table.
 
 ``` r
 Lms3.cv(2, 3, 4, 100, 0.05, B = 1e3) 
-#> [1] 22.68957
+#> [1] 22.47304
 Lms3.cv(2, 3, 4, 100, 0.1, B = 1e4) 
-#> [1] 20.81324
+#> [1] 20.9283
 ```
 
 **Lms3.pvalue**
@@ -349,9 +349,9 @@ independence test in the three-way contingency table.
 
 ``` r
 Lms3.pvalue(Lms3.stat(table4), 2, 3, 4, 100, B = 1e3)
-#> [1] 0.3686314
+#> [1] 0.4435564
 Lms3.pvalue(Lms3.stat(table4), 2, 3, 4, 40, B = 1e4)
-#> [1] 0.9985001
+#> [1] 0.9975002
 ```
 
 **Lms3.test**
@@ -366,14 +366,14 @@ Lms3.test(table4, B = 1e3)
 #>  table
 #> 
 #> data:  table4
-#> D = 10.123, p-value = 0.4078
+#> D = 10.123, p-value = 0.4223
 Lms3.test(table4, B = 1e4)
 #> 
 #>  Logarithmic minimum test for independence in three-way contingency
 #>  table
 #> 
 #> data:  table4
-#> D = 10.123, p-value = 0.422
+#> D = 10.123, p-value = 0.4243
 ```
 
 **GenTab4**
@@ -386,62 +386,62 @@ GenTab4(array(1/16, dim=c(2,2,2,2)), 100)
 #> , , 1, 1
 #> 
 #>      [,1] [,2]
-#> [1,]    5    6
-#> [2,]    3    6
+#> [1,]    5    3
+#> [2,]    9    7
 #> 
 #> , , 2, 1
 #> 
 #>      [,1] [,2]
-#> [1,]    4    5
-#> [2,]    5    8
+#> [1,]    5    6
+#> [2,]    8    7
 #> 
 #> , , 1, 2
 #> 
 #>      [,1] [,2]
-#> [1,]    7    8
-#> [2,]    2    9
+#> [1,]    8    8
+#> [2,]    8    7
 #> 
 #> , , 2, 2
 #> 
 #>      [,1] [,2]
-#> [1,]    5    7
-#> [2,]   10   10
+#> [1,]    6    3
+#> [2,]    3    7
 GenTab4(array(1/36, dim=c(2,3,2,3)), 150)
 #> , , 1, 1
 #> 
 #>      [,1] [,2] [,3]
-#> [1,]    2    6    2
-#> [2,]    4    4    4
+#> [1,]    6    2    3
+#> [2,]    6    5    3
 #> 
 #> , , 2, 1
 #> 
 #>      [,1] [,2] [,3]
-#> [1,]    2    4    2
-#> [2,]    9    2    1
+#> [1,]    4    5    4
+#> [2,]    5    3    5
 #> 
 #> , , 1, 2
 #> 
 #>      [,1] [,2] [,3]
-#> [1,]    5    1    3
-#> [2,]    1    5    3
+#> [1,]    3    3    7
+#> [2,]    6    5    5
 #> 
 #> , , 2, 2
 #> 
 #>      [,1] [,2] [,3]
-#> [1,]    2    4    3
-#> [2,]    4    4    8
+#> [1,]    3    4    3
+#> [2,]    4    6    6
 #> 
 #> , , 1, 3
 #> 
 #>      [,1] [,2] [,3]
-#> [1,]    1    7    4
-#> [2,]    6    5    8
+#> [1,]    1    2    3
+#> [2,]    4    4    5
 #> 
 #> , , 2, 3
 #> 
 #>      [,1] [,2] [,3]
-#> [1,]    4    6    4
-#> [2,]    9    6    5
+#> [1,]    5    6    4
+#> [2,]    6    4    0
 ```
 
 **Mod4.stat**
@@ -463,9 +463,9 @@ test in the four-way contingency table.
 
 ``` r
 Mod4.cv(2, 2, 2, 2, 100, 0.05, B = 1e3)
-#> [1] 5.970595
+#> [1] 6.114503
 Mod4.cv(2, 2, 2, 2, 100, 0.1, B = 1e4)
-#> [1] 5.56599
+#> [1] 5.588604
 ```
 
 **Mod4.pvalue**
@@ -519,9 +519,9 @@ independence test in the four-way contingency table.
 
 ``` r
 Lms4.cv(2, 2, 2, 2, 100, 0.05, B = 1e3) 
-#> [1] 3.883484
+#> [1] 3.872962
 Lms4.cv(2, 2, 2, 2, 100, 0.1, B = 1e4) 
-#> [1] 3.425664
+#> [1] 3.431831
 ```
 
 **Lms4.pvalue**

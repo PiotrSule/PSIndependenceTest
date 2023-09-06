@@ -4,7 +4,7 @@
 #' Calculates the statistic of the Logarithmic minimum test for independence in four-way contingency table
 #'
 #' @param nijtu a numeric matrix with non-negative values of the four-way contingency table cells
-#'
+#' @return The function returns the value of the logarithmic minimum test statistic.
 #' @rdname Lms4.stat
 #'
 #' @details

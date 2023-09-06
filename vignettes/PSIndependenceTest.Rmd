@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# PSIndependenceTest: Independence Tests for Two-way, Three-way and Four-way Contingency Tables
+# PSIndependenceTest: Independence Tests for Two-Way, Three-Way and Four-Way Contingency Tables
 **author: Piotr Sulewski, Pomeranian University**
 <!-- badges: start -->
 <!-- badges: end -->

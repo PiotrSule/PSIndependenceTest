@@ -9,7 +9,7 @@
 #' @param nt a number of tubes
 #' @param n a sample size
 #' @param B <optional> an integer specifying the number of replicates used in the Monte Carlo test
-#'
+#' @return The function returns the p-value of the modular test.
 #' @rdname Mod3.pvalue
 #'
 #' @details
@@ -23,8 +23,8 @@
 #'
 #' @examples
 #' tab7 = GenTab3(array(0.125, dim = c(2, 2, 2)), 100)
-#' Mod3.pvalue(Mod3.stat(tab7), 2, 2, 2, 100, B=1e3)
-#' Mod3.pvalue(1.333, 2, 3, 4, 200, B=6*1e3)
+#' \donttest{Mod3.pvalue(Mod3.stat(tab7), 2, 2, 2, 100, B = 1e3)}
+#' \donttest{Mod3.pvalue(1.333, 2, 3, 4, 200, B = 1e3)}
 #'
 #' @export
 

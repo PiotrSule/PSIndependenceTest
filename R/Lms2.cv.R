@@ -1,4 +1,4 @@
-#' @title Logarithmic minimum test for independence in two-way contingency table
+#' @title Logarithmic Minimum Test for Independence in Two-Way Contingency Table
 #'
 #' @description
 #' Calculates the critical values of the logarithmic minimum test.
@@ -8,7 +8,7 @@
 #' @param n a sample size
 #' @param alfa a significance level
 #' @param B <optional> an integer specifying the number of replicates used in the Monte Carlo test
-#'
+#' @return The function returns the critical value of the logarithmic minimum test.
 #' @rdname Lms2.cv
 #'
 #' @details
@@ -21,8 +21,8 @@
 #' {Sulewski, P. (2019). \emph{The LMS for Testing Independence in Two-way Contingency Tables.} Biometrical Letters 56(1), 17-43} #'
 #'
 #' @examples
-#' Lms2.cv(6, 2, 93, 0.05)
-#' Lms2.cv(3, 2, 150, 0.1, B = 5*1e4)
+#' \donttest{Lms2.cv(6, 2, 93, 0.05, B = 1e3)}
+#' \donttest{Lms2.cv(3, 2, 150, 0.1, B = 1e3)}
 #'
 #' @export
 

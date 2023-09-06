@@ -5,7 +5,7 @@
 #' (see Sulewski P. (2016)).
 #'
 #' @param nij a numeric matrix with non-negative values of the two-way contingency table cells
-#'
+#' @return The function returns the value of the modular test statistic.
 #' @rdname Mod2.stat
 #'
 #' @details

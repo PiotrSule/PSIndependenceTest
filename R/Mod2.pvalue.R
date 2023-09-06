@@ -8,7 +8,7 @@
 #' @param nc a number of columns
 #' @param n a sample size
 #' @param B <optional> an integer specifying the number of replicates used in the Monte Carlo test
-#'
+#' @return The function returns the p-value of the modular test.
 #' @rdname Mod2.pvalue
 #'
 #' @details
@@ -23,8 +23,8 @@
 #' @examples
 #' pij=matrix(1/4, nrow = 2, ncol = 2)
 #' tab4=GenTab2(pij, 30)
-#' Mod2.pvalue(Mod2.stat(tab4), 6, 2, 93, B=1e3)
-#' Mod2.pvalue(1.949, 3, 2, 150, B=7e3)
+#' \donttest{Mod2.pvalue(Mod2.stat(tab4), 6, 2, 93, B=1e3)}
+#' \donttest{Mod2.pvalue(1.949, 3, 2, 150, B=1e3)}
 #'
 #' @export
 

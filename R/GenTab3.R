@@ -1,11 +1,11 @@
 #' @title Three-way contingency table r x c x t  - generation
 #'
 #' @description
-#' Generating a three-way contingency table r x c x t (see Sulewski P. (2018)).
+#' Generating a three-way contingency table r x c x t.
 #'
 #' @param pijt a numeric matrix with non-negative probability values of the three-way contingency table
 #' @param n a sample size
-#'
+#' @return The function returns the three-way contingency table r x c x t
 #' @rdname GenTab3
 #'
 #' @details

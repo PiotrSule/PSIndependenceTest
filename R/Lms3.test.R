@@ -5,7 +5,7 @@
 #'
 #' @param nijt a numeric matrix with non-negative values of the three-way contingency table cells
 #' @param B <optional> an integer specifying the number of replicates used in the Monte Carlo test
-#'
+#' @return The function returns values of the test statistic and p-value of the logarithmic minimum test.
 #' @rdname Lms3.test
 #'
 #' @details
@@ -19,8 +19,7 @@
 #'
 #' @examples
 #' tab3 = GenTab3(array(0.125, dim = c(2, 2, 2)), 100)
-#' Lms3.test(tab3)
-#' Lms3.test(tab3, B = 7*1e3)
+#' \donttest{Lms3.test(tab3, B = 1e3)}
 #'
 #' @export
 

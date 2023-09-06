@@ -1,10 +1,10 @@
-#' @title Logarithmic minimum test for independence in two-way contingency table
+#' @title Logarithmic Minimum Test for Independence in Two-Way Contingency Table
 #'
 #' @description
 #' Calculates the logarithmic minimum statistics (see Sulewski P. (2019)).
 #'
 #' @param nij a numeric matrix with non-negative values of the two-way contingency table cells
-#'
+#' @return The function returns the value of the logarithmic minimum test statistic
 #' @rdname Lms2.stat
 #'
 #' @details
