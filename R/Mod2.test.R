@@ -4,7 +4,7 @@
 #' Calculates the test statistic and p-value of the modular test for independence in two-way contingency table
 #'
 #' @param nij a numeric matrix with non-negative values of the two-way contingency table cells
-#' @param B <optional> an integer specifying the number of replicates used in the Monte Carlo test
+#' @param B an integer specifying the number of replicates used in the Monte Carlo test (optional)
 #' @return The function returns values of the test statistic and p-value of the modular test.
 #' @rdname Mod2.test
 #'

@@ -15,7 +15,10 @@ Mod2.pvalue(stat, nr, nc, n, B = 10000)
 
 \item{n}{a sample size}
 
-\item{B}{\if{html}{\out{<optional>}} an integer specifying the number of replicates used in the Monte Carlo test}
+\item{B}{an integer specifying the number of replicates used in the Monte Carlo test (optional)}
+}
+\value{
+The function returns the p-value of the modular test.
 }
 \description{
 Calculates the p-value of the modular test for independence in two-way contingency table
@@ -26,8 +29,8 @@ The p-value of the modular test for independence in r x c contingency table,
 \examples{
 pij=matrix(1/4, nrow = 2, ncol = 2)
 tab4=GenTab2(pij, 30)
-Mod2.pvalue(Mod2.stat(tab4), 6, 2, 93, B=1e3)
-Mod2.pvalue(1.949, 3, 2, 150, B=7e3)
+\donttest{Mod2.pvalue(Mod2.stat(tab4), 6, 2, 93, B=1e3)}
+\donttest{Mod2.pvalue(1.949, 3, 2, 150, B=1e3)}
 
 }
 \references{

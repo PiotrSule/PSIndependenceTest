@@ -11,9 +11,11 @@ GenTab2(pij, n)
 
 \item{n}{a sample size}
 }
+\value{
+The function returns the two-way contingency table r x c
+}
 \description{
 Generating a two-way contingency table r x c
-(see Sulewski P. (2016)).
 }
 \details{
 Generating a two-way contingency table r x c using the probability matrix pij.

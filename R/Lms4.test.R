@@ -4,7 +4,7 @@
 #' Calculates the test statistic and p-value of the Logarithmic minimum  test for independence in four-way contingency table
 #'
 #' @param nijtu a numeric matrix with non-negative values of the four-way contingency table cells
-#' @param B <optional> an integer specifying the number of replicates used in the Monte Carlo test
+#' @param B an integer specifying the number of replicates used in the Monte Carlo test (optional)
 #' @return The function returns values of the test statistic and p-value of the logarithmic minimum test.
 #' @rdname Lms4.test
 #'

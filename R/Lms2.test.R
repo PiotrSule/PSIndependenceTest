@@ -4,7 +4,7 @@
 #' Calculates the test statistic and p-value of the logarithmic minimum test.
 #'
 #' @param nij a numeric matrix with non-negative values of the two-way contingency table cells
-#' @param B <optional> an integer specifying the number of replicates used in the Monte Carlo test
+#' @param B an integer specifying the number of replicates used in the Monte Carlo test (optional)
 #' @return The function returns values of the test statistic and p-value of the logarithmic minimum test.
 #' @rdname Lms2.test
 #'

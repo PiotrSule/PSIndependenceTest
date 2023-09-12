@@ -2,12 +2,15 @@
 % Please edit documentation in R/Lms2.stat.R
 \name{Lms2.stat}
 \alias{Lms2.stat}
-\title{Logarithmic minimum test for independence in two-way contingency table}
+\title{Logarithmic Minimum Test for Independence in Two-Way Contingency Table}
 \usage{
 Lms2.stat(nij)
 }
 \arguments{
 \item{nij}{a numeric matrix with non-negative values of the two-way contingency table cells}
+}
+\value{
+The function returns the value of the logarithmic minimum test statistic
 }
 \description{
 Calculates the logarithmic minimum statistics (see Sulewski P. (2019)).

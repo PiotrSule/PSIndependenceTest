@@ -1,7 +1,7 @@
 #' Second data set as two-way contingency table 2 x 3
 #'
-#' The second data set from {Sulewski, P. (2019). \emph{The LMS for Testing Independence in Two-way Contingency Tables.} Biometrical Letters 56 (1), 17-43}
-#' consist of 25 observations described the effect of a treatment for rheumatoid arthritis vs. a placebo. See Table 17 in the paper.
+#' The second data set obtained using the Monte Carlo method consist of 60 observations
+#' when Ho is true, i.e. all probabilities equal 1/6
 #'
 #' @format two-way contingency table 2 x 3
 #'

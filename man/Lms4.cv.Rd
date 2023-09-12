@@ -19,7 +19,10 @@ Lms4.cv(nr, nc, nt, nu, n, alfa, B = 10000)
 
 \item{alfa}{a significance level}
 
-\item{B}{(optional) an integer specifying the number of replicates used in the Monte Carlo test}
+\item{B}{an integer specifying the number of replicates used in the Monte Carlo test (optional)}
+}
+\value{
+The function returns the critical value of the logarithmic minimum test.
 }
 \description{
 Calculates the critical value of the Logarithmic minimum test for independence in four-way contingency table
@@ -28,8 +31,8 @@ Calculates the critical value of the Logarithmic minimum test for independence i
 The Critical value of the Logarithmic minimum test for independence in r x c x t contingency table,
 }
 \examples{
-Lms4.cv(2, 2, 2, 3, 100, 0.05)
-Lms4.cv(2, 3, 2, 3, 100, 0.1, B = 6*1e3)
+\donttest{Lms4.cv(2, 2, 2, 3, 100, 0.05, B = 1e3)}
+\donttest{Lms4.cv(2, 3, 2, 3, 100, 0.1, B = 1e3)}
 
 }
 \references{

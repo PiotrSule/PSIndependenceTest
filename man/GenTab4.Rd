@@ -11,8 +11,11 @@ GenTab4(pijtu, n)
 
 \item{n}{a sample size}
 }
+\value{
+The function returns the four-way contingency table r x c x t x u
+}
 \description{
-Generating a four-way contingency table r x c x t x u (see Sulewski P. (2018)).
+Generating a four-way contingency table r x c x t x u.
 }
 \details{
 Generating a four-way contingency table r x c x t x u using the probability matrix pijtu.

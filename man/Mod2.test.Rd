@@ -9,7 +9,10 @@ Mod2.test(nij, B = 10000)
 \arguments{
 \item{nij}{a numeric matrix with non-negative values of the two-way contingency table cells}
 
-\item{B}{\if{html}{\out{<optional>}} an integer specifying the number of replicates used in the Monte Carlo test}
+\item{B}{an integer specifying the number of replicates used in the Monte Carlo test (optional)}
+}
+\value{
+The function returns values of the test statistic and p-value of the modular test.
 }
 \description{
 Calculates the test statistic and p-value of the modular test for independence in two-way contingency table
@@ -19,9 +22,9 @@ The test statistic and p-value of the modular test for independence in r x c con
 }
 \examples{
 pij=matrix(1/9, nrow = 3, ncol = 3)
-Mod2.test(GenTab2(pij, 50))
+\donttest{Mod2.test(GenTab2(pij, 50), B = 1e3)}
 iris$size <- ifelse(iris$Sepal.Length < median(iris$Sepal.Length),"small", "big")
-Mod2.test(table(iris$Species, iris$size), B=1e3)
+\donttest{Mod2.test(table(iris$Species, iris$size), B=1e3)}
 
 }
 \references{

@@ -2,14 +2,17 @@
 % Please edit documentation in R/Lms2.test.R
 \name{Lms2.test}
 \alias{Lms2.test}
-\title{Logarithmic minimum test for independence in two-way contingency table}
+\title{Logarithmic Minimum Test for Independence in Two-Way Contingency Table}
 \usage{
 Lms2.test(nij, B = 10000)
 }
 \arguments{
 \item{nij}{a numeric matrix with non-negative values of the two-way contingency table cells}
 
-\item{B}{\if{html}{\out{<optional>}} an integer specifying the number of replicates used in the Monte Carlo test}
+\item{B}{an integer specifying the number of replicates used in the Monte Carlo test (optional)}
+}
+\value{
+The function returns values of the test statistic and p-value of the logarithmic minimum test.
 }
 \description{
 Calculates the test statistic and p-value of the logarithmic minimum test.
@@ -19,9 +22,9 @@ The test statistic and p-value of he logarithmic minimum test for independence i
 }
 \examples{
 pij=matrix(1/6, nrow = 2, ncol = 3)
-Lms2.test(GenTab2(pij, 50))
+\donttest{Lms2.test(GenTab2(pij, 50), B = 1e3)}
 iris$size <- ifelse(iris$Sepal.Length < median(iris$Sepal.Length),"small", "big")
-Lms2.test(table(iris$Species, iris$size), B=1e3)
+\donttest{Lms2.test(table(iris$Species, iris$size), B=1e3)}
 
 }
 \references{

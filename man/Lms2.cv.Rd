@@ -2,7 +2,7 @@
 % Please edit documentation in R/Lms2.cv.R
 \name{Lms2.cv}
 \alias{Lms2.cv}
-\title{Logarithmic minimum test for independence in two-way contingency table}
+\title{Logarithmic Minimum Test for Independence in Two-Way Contingency Table}
 \usage{
 Lms2.cv(nr, nc, n, alfa, B = 10000)
 }
@@ -15,7 +15,10 @@ Lms2.cv(nr, nc, n, alfa, B = 10000)
 
 \item{alfa}{a significance level}
 
-\item{B}{\if{html}{\out{<optional>}} an integer specifying the number of replicates used in the Monte Carlo test}
+\item{B}{an integer specifying the number of replicates used in the Monte Carlo test (optional)}
+}
+\value{
+The function returns the critical value of the logarithmic minimum test.
 }
 \description{
 Calculates the critical values of the logarithmic minimum test.
@@ -24,8 +27,8 @@ Calculates the critical values of the logarithmic minimum test.
 The Critical value of the logarithmic minimum test for independence in r x c contingency table,
 }
 \examples{
-Lms2.cv(6, 2, 93, 0.05)
-Lms2.cv(3, 2, 150, 0.1, B = 5*1e4)
+\donttest{Lms2.cv(6, 2, 93, 0.05, B = 1e3)}
+\donttest{Lms2.cv(3, 2, 150, 0.1, B = 1e3)}
 
 }
 \references{

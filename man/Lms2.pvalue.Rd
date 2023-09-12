@@ -2,7 +2,7 @@
 % Please edit documentation in R/Lms2.pvalue.R
 \name{Lms2.pvalue}
 \alias{Lms2.pvalue}
-\title{Logarithmic minimum test for independence in two-way contingency table}
+\title{Logarithmic Minimum Test for Independence in Two-Way Contingency Table}
 \usage{
 Lms2.pvalue(stat, nr, nc, n, B = 10000)
 }
@@ -15,7 +15,10 @@ Lms2.pvalue(stat, nr, nc, n, B = 10000)
 
 \item{n}{a sample size}
 
-\item{B}{\if{html}{\out{<optional>}} an integer specifying the number of replicates used in the Monte Carlo test}
+\item{B}{an integer specifying the number of replicates used in the Monte Carlo test (optional)}
+}
+\value{
+The function returns the p-value of the logarithmic minimum test.
 }
 \description{
 Calculates the p-value of the logarithmic minimum test.
@@ -25,8 +28,8 @@ The p-value of  the logarithmic minimum test for independence in r x c contingen
 data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAWElEQVR42mNgGPTAxsZmJsVqQApgmGw1yApwKcQiT7phRBuCzzCSDSHGMKINIeDNmWQlA2IigKJwIssQkHdINgxfmBBtGDEBS3KCxBc7pMQgMYE5c/AXPwAwSX4lV3pTWwAAAABJRU5ErkJggg==
 }
 \examples{
-Lms2.pvalue(Lms2.stat(table1), 6, 2, 93)
-Lms2.pvalue(1.949, 3, 2, 150, B=5e3)
+\donttest{Lms2.pvalue(Lms2.stat(table1), 6, 2, 93, B = 1e3)}
+\donttest{Lms2.pvalue(1.949, 3, 2, 150, B=1e3)}
 
 }
 \references{

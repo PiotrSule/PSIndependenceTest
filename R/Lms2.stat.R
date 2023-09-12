@@ -32,9 +32,9 @@ Lms2.stat <- function(nij) {
   nkj <- colSums(nij)
   E <- outer(nik, nkj, "*") / sum(nij)
   S <- 0
-  for(j in 1:nc) for(i in 1:nr) S <- S + log(min(nij[i, j], E[i, j]) /
+    for(j in 1:nc) for(i in 1:nr) S <- S + log(min(nij[i, j], E[i, j]) /
                               max(nij[i, j], E[i, j]) + 1e-5)
-  return (-S)
+    return (-S)
 }
 
 

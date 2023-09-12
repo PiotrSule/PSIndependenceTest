@@ -19,7 +19,10 @@ Mod4.pvalue(stat, nr, nc, nt, nu, n, B = 10000)
 
 \item{n}{a sample size}
 
-\item{B}{\if{html}{\out{<optional>}} an integer specifying the number of replicates used in the Monte Carlo test}
+\item{B}{an integer specifying the number of replicates used in the Monte Carlo test (optional)}
+}
+\value{
+The function returns the p-value of the modular test.
 }
 \description{
 Calculates the p-value of the modular test for independence in four-way contingency table
@@ -29,8 +32,8 @@ The Critical value of the modular test for independence in r x c x t x u conting
 }
 \examples{
 data = GenTab4(array(1/16, dim = c(2, 2, 2, 2)), 100)
-Mod4.pvalue(Mod4.stat(data), 2, 2, 2, 2, 100, B=1e3)
-Mod4.pvalue(2.333, 2, 2, 3, 3, 200, B=5*1e3)
+\donttest{Mod4.pvalue(Mod4.stat(data), 2, 2, 2, 2, 100, B=1e3)}
+\donttest{Mod4.pvalue(2.333, 2, 2, 3, 3, 200, B=1e3)}
 
 }
 \references{

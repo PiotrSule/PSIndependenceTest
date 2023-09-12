@@ -7,7 +7,7 @@
 #' @param nc a number of columns
 #' @param n a sample size
 #' @param alfa a significance level
-#' @param B <optional> an integer specifying the number of replicates used in the Monte Carlo test
+#' @param B an integer specifying the number of replicates used in the Monte Carlo test (optional)
 #' @return The function returns the critical value of the logarithmic minimum test.
 #' @rdname Lms2.cv
 #'

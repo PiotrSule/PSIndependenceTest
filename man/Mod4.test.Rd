@@ -9,7 +9,10 @@ Mod4.test(nijtu, B = 10000)
 \arguments{
 \item{nijtu}{a numeric matrix with non-negative values of the four-way contingency table cells}
 
-\item{B}{\if{html}{\out{<optional>}} an integer specifying the number of replicates used in the Monte Carlo test}
+\item{B}{an integer specifying the number of replicates used in the Monte Carlo test (optional)}
+}
+\value{
+The function returns values of the test statistic and p-value of the modular test.
 }
 \description{
 Calculates the test statistic and p-value of the modular test for independence in four-way contingency table
@@ -19,8 +22,7 @@ The test statistic and p-value of the modular test for independence in r x c x t
 }
 \examples{
 data = GenTab4(array(1/16, dim = c(2, 2, 2, 2)), 100)
-Mod4.test(data)
-Mod4.test(data, B = 5*1e3)
+\donttest{Mod4.test(data, B = 1e3)}
 
 }
 \references{

@@ -9,7 +9,10 @@ Lms3.test(nijt, B = 10000)
 \arguments{
 \item{nijt}{a numeric matrix with non-negative values of the three-way contingency table cells}
 
-\item{B}{\if{html}{\out{<optional>}} an integer specifying the number of replicates used in the Monte Carlo test}
+\item{B}{an integer specifying the number of replicates used in the Monte Carlo test (optional)}
+}
+\value{
+The function returns values of the test statistic and p-value of the logarithmic minimum test.
 }
 \description{
 Calculates the test statistic and p-value of the Logarithmic minimum  test for independence in three-way contingency table
@@ -19,8 +22,7 @@ The test statistic and p-value of the Logarithmic minimum  test for independence
 }
 \examples{
 tab3 = GenTab3(array(0.125, dim = c(2, 2, 2)), 100)
-Lms3.test(tab3)
-Lms3.test(tab3, B = 7*1e3)
+\donttest{Lms3.test(tab3, B = 1e3)}
 
 }
 \references{

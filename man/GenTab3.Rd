@@ -11,8 +11,11 @@ GenTab3(pijt, n)
 
 \item{n}{a sample size}
 }
+\value{
+The function returns the three-way contingency table r x c x t
+}
 \description{
-Generating a three-way contingency table r x c x t (see Sulewski P. (2018)).
+Generating a three-way contingency table r x c x t.
 }
 \details{
 Generating a three-way contingency table r x c x t using the probability matrix pijt.

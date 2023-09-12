@@ -9,6 +9,9 @@ Lms4.stat(nijtu)
 \arguments{
 \item{nijtu}{a numeric matrix with non-negative values of the four-way contingency table cells}
 }
+\value{
+The function returns the value of the logarithmic minimum test statistic.
+}
 \description{
 Calculates the statistic of the Logarithmic minimum test for independence in four-way contingency table
 }

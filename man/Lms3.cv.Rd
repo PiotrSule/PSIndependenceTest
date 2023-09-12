@@ -17,7 +17,10 @@ Lms3.cv(nr, nc, nt, n, alfa, B = 10000)
 
 \item{alfa}{a significance level}
 
-\item{B}{(optional) an integer specifying the number of replicates used in the Monte Carlo test}
+\item{B}{an integer specifying the number of replicates used in the Monte Carlo test (optional)}
+}
+\value{
+The function returns the critical value of the logarithmic minimum test.
 }
 \description{
 Calculates the critical value of the Logarithmic minimum test for independence in three-way contingency table
@@ -27,8 +30,8 @@ Calculates the critical value of the Logarithmic minimum test for independence i
 The Critical value of the Logarithmic minimum test for independence in r x c x t contingency table,
 }
 \examples{
-Lms3.cv(2, 3, 4, 200, 0.05)
-Lms3.cv(2, 2, 2, 100, 0.1, B = 2*1e4)
+\donttest{Lms3.cv(2, 3, 4, 200, 0.05, B = 1e3)}
+\donttest{Lms3.cv(2, 2, 2, 100, 0.1, B = 1e3)}
 
 }
 \references{

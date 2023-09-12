@@ -17,7 +17,10 @@ Mod3.pvalue(stat, nr, nc, nt, n, B = 10000)
 
 \item{n}{a sample size}
 
-\item{B}{\if{html}{\out{<optional>}} an integer specifying the number of replicates used in the Monte Carlo test}
+\item{B}{an integer specifying the number of replicates used in the Monte Carlo test (optional)}
+}
+\value{
+The function returns the p-value of the modular test.
 }
 \description{
 Calculates the p-value of the modular test for independence in three-way contingency table
@@ -27,8 +30,8 @@ The Critical value of the modular test for independence in r x c x t contingency
 }
 \examples{
 tab7 = GenTab3(array(0.125, dim = c(2, 2, 2)), 100)
-Mod3.pvalue(Mod3.stat(tab7), 2, 2, 2, 100, B=1e3)
-Mod3.pvalue(1.333, 2, 3, 4, 200, B=6*1e3)
+\donttest{Mod3.pvalue(Mod3.stat(tab7), 2, 2, 2, 100, B = 1e3)}
+\donttest{Mod3.pvalue(1.333, 2, 3, 4, 200, B = 1e3)}
 
 }
 \references{

@@ -9,6 +9,9 @@ Lms3.stat(nijt)
 \arguments{
 \item{nijt}{a numeric matrix with non-negative values of the three-way contingency table cells}
 }
+\value{
+The function returns the value of the logarithmic minimum test statistic.
+}
 \description{
 Calculates the statistic of the Logarithmic minimum test for independence in three-way contingency table
 (see Sulewski P. (2018)).

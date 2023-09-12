@@ -1,9 +1,9 @@
-#' Fourth data set: three-way contingency table 2 x 3 x 4
+#' Fourth data set: three-way contingency table 2 x 2 x 2
 #'
-#' The fourth data set obtained using the Monte Carlo method consist of 100 observations
-#' when Ho is true, i.e. all probabilities equal 1/24.
+#' The fourth data set obtained using the Monte Carlo method consist of 80 observations
+#' when Ho is true, i.e. all probabilities equal 1/8.
 #'
-#' @format three-way contingency table 2 x 3 x 4
+#' @format three-way contingency table 2 x 2 x 2
 #'
 #' @docType data
 #'

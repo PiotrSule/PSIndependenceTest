@@ -9,6 +9,9 @@ Mod2.stat(nij)
 \arguments{
 \item{nij}{a numeric matrix with non-negative values of the two-way contingency table cells}
 }
+\value{
+The function returns the value of the modular test statistic.
+}
 \description{
 Calculates the statistic of the modular test for independence in two-way contingency table
 (see Sulewski P. (2016)).
