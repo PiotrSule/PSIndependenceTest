@@ -24,7 +24,7 @@
 #'
 #' @examples
 #' Mod3.cv(2, 2, 2, 80, 0.05, B = 1e2)
-#' Mod3.cv(2, 2, 2, 80, 0.1, B = 1e3)
+#' \donttest{Mod3.cv(2, 2, 2, 80, 0.1, B = 1e3)}
 #'
 #' @export
 

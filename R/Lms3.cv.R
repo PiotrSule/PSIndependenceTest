@@ -24,7 +24,7 @@
 #'
 #' @examples
 #' Lms3.cv(2, 2, 2, 80, 0.05, B = 1e2)
-#' Lms3.cv(2, 2, 2, 80, 0.1, B = 1e3)
+#' \dontttest{Lms3.cv(2, 2, 2, 80, 0.1, B = 1e3)}
 #'
 #' @export
 

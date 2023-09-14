@@ -23,8 +23,8 @@
 #' {Sulewski, P. (2016). \emph{Moc testów niezależności w tablicy dwudzielczej większej niż 2×2,} Przegląd statystyczny 63(2), 190-210}
 #'
 #' @examples
-#' Mod2.cv(2, 2, 40, 0.05, B = 1e3)
-#' Mod2.cv(2, 3, 60, 0.1)
+#' \donttest{Mod2.cv(2, 2, 40, 0.05, B = 1e2)}
+#' \donttest{Mod2.cv(2, 3, 60, 0.1)}
 #'
 #' @export
 
