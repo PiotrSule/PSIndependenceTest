@@ -19,17 +19,19 @@
 #' {Sulewski, P. (2016). \emph{Moc testów niezależności w tablicy dwudzielczej większej niż 2×2,} Przegląd statystyczny 63(2), 190-210}
 #'
 #' @examples
-#' pij=matrix(1/12, nrow = 3, ncol = 4)
-#' tab5=GenTab2(pij, 60)
+#' tab5=GenTab2(matrix(1/12, nrow = 3, ncol = 4), 60)
 #' Mod2.stat(tab5)
-#' iris$size <- ifelse(iris$Sepal.Length < median(iris$Sepal.Length),"small", "big")
-#' Mod2.stat(table(iris$Species, iris$size))
+#' Mod2.stat(table1)
 #'
 #' @export
 
 Mod2.stat <- function(nij) {
+  nr <- nrow(nij); nc <- ncol(nij)
   nik <- rowSums(nij)
   nkj <- colSums(nij)
   E <- outer(nik, nkj, "*") / sum(nij)
-  return (sum(abs(nij - E) / E))
+  zero <- FALSE
+  for (i in 1:nr) for (j in 1:nc) if (E[i,j] == 0) zero <-  TRUE
+  if (zero == TRUE) stat = "Expected values must be nonzero" else stat=sum(abs(nij - E) / E)
+  return (stat)
 }

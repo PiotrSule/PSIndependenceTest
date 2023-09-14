@@ -31,8 +31,9 @@ Calculates the critical value of the modular test for independence in four-way c
 The Critical value of the Logarithmic minimum test for independence in r x c x t contingency table,
 }
 \examples{
-\donttest{Mod4.cv(2, 2, 2, 3, 100, 0.05, B = 1e3)}
-\donttest{Mod4.cv(2, 3, 2, 3, 100, 0.1, B = 1e3)}
+
+Mod4.cv(2, 2, 2, 2, 160, 0.05, B = 1e2)
+Mod4.cv(2, 2, 2, 2, 160, 0.1, B = 1e3)
 
 }
 \references{

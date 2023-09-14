@@ -11,7 +11,7 @@ four-way contingency table 4 x 2 x 2 x 2
 table5
 }
 \description{
-The fifth data set provides information on the fate of passengers on the fatal maiden voyage of the ocean liner ‘Titanic’, summarized according to economic status (class), sex, age and survival.
+The fifth data set provides information on the fate of 2201 passengers on the fatal maiden voyage of the ocean liner ‘Titanic’, summarized according to economic status (class), sex, age and survival.
 }
 \keyword{data}
 \keyword{set}

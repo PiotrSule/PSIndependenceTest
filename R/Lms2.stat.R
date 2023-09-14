@@ -18,10 +18,8 @@
 #' {Sulewski, P. (2019). \emph{The LMS for Testing Independence in Two-way Contingency Tables.} Biometrical Letters 56(1), 17-43}
 #'
 #' @examples
-#' pij=matrix(1/6, nrow = 2, ncol = 3)
-#' Lms2.stat(GenTab2(pij, 50))
-#' iris$size <- ifelse(iris$Sepal.Length < median(iris$Sepal.Length),"small", "big")
-#' Lms2.stat(table(iris$Species, iris$size))
+#' Lms2.stat(table1)
+#' Lms2.stat(table2)
 #'
 #' @export
 
@@ -31,10 +29,15 @@ Lms2.stat <- function(nij) {
   nik <- rowSums(nij)
   nkj <- colSums(nij)
   E <- outer(nik, nkj, "*") / sum(nij)
-  S <- 0
+  zero <- FALSE
+  for (i in 1:nr) for (j in 1:nc) if (E[i,j] == 0) zero <-  TRUE
+  if (zero == TRUE) stat = "Expected values must be nonzero" else {
+    S <- 0
     for(j in 1:nc) for(i in 1:nr) S <- S + log(min(nij[i, j], E[i, j]) /
-                              max(nij[i, j], E[i, j]) + 1e-5)
-    return (-S)
+                                  max(nij[i, j], E[i, j]) + 1e-5)
+    stat <- -S
+    }
+  return (stat)
 }
 
 

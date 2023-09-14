@@ -17,8 +17,8 @@
 #' Extension of the information contained in {Sulewski, P. (2018). \emph{Power Analysis Of Independence Testing for the Three-Way Con-tingency Tables of Small Sizes.} Journal of Applied Statistics 45(13), 2481-2498}
 #'
 #' @examples
-#' data = GenTab4(array(1/16, dim = c(2, 2, 2, 2)), 100)
-#' Mod4.stat(data)
+#' Mod4.stat(GenTab4(array(1/16, dim = c(2, 2, 2, 2)), 100))
+#' Mod4.stat(table6)
 #'
 #' @export
 
@@ -39,5 +39,8 @@ Mod4.stat <- function(nijtu) {
   for(u in 1:nu) for(i in 1:nr) for(j in 1:nc) for(t in 1:nt) nkktk[t] <- nkktk[t] + nijtu[i,j,t,u]
   for(i in 1:nr) for(j in 1:nc) for(t in 1:nt) for(u in 1:nu) nkkku[u] <- nkkku[u] + nijtu[i,j,t,u]
   for(u in 1:nu) for(t in 1:nt) for(j in 1:nc) for(i in 1:nr) E[i,j,t,u] <- nikkk[i] * nkjkk[j] * nkktk[t] * nkkku[u] / n / n / n
-  return (sum(abs(nijtu - E) / E))
+  zero <- FALSE
+  for(u in 1:nu) for(t in 1:nt) for(j in 1:nc) for(i in 1:nr) if (E[i,j,t, u] == 0) zero=TRUE
+  if (zero == TRUE) stat = "Expected values must be nonzero" else stat=sum(abs(nijtu - E) / E)
+  return (stat)
 }

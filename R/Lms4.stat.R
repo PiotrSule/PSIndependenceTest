@@ -17,8 +17,8 @@
 #' Extension of the information contained in {Sulewski, P. (2021). \emph{Logarithmic Minimum Test for Independence in Three Way Con-tingency Table of Small Sizes,} Journal of Statistical Computation and Simulation 91(13), 2780-2799}
 #'
 #' @examples
-#' data = GenTab4(array(1/16, dim = c(2, 2, 2, 2)), 100)
-#' Lms4.stat(data)
+#' Lms4.stat(GenTab4(array(1/16, dim = c(2, 2, 2, 2)), 160))
+#' Lms4.stat(table5)
 #'
 #' @export
 
@@ -39,7 +39,14 @@ Lms4.stat <- function(nijtu) {
   for(u in 1:nu) for(i in 1:nr) for(j in 1:nc) for(t in 1:nt) nkktk[t] <- nkktk[t] + nijtu[i,j,t,u]
   for(i in 1:nr) for(j in 1:nc) for(t in 1:nt) for(u in 1:nu) nkkku[u] <- nkkku[u] + nijtu[i,j,t,u]
   for(u in 1:nu) for(t in 1:nt) for(j in 1:nc) for(i in 1:nr) E[i,j,t,u] <- nikkk[i] * nkjkk[j] * nkktk[t] * nkkku[u] / n / n / n
-  for(t in 1:nt) for(j in 1:nc) for(i in 1:nr)  S <- S + log(min(nijtu[i, j, t, u], E[i, j, t, u]) /
-                max(nijtu[i, j, t, u], E[i, j, t, u]) + 0.00001)
-  return (-S)
+
+  zero <- FALSE
+  for(u in 1:nu) for(t in 1:nt) for(j in 1:nc) for(i in 1:nr) if (E[i,j,t, u] == 0) zero <-  TRUE
+  if (zero == TRUE) stat = "Expected values must be nonzero" else {
+    S <- 0
+    for(u in 1:nu) for(t in 1:nt) for(j in 1:nc) for(i in 1:nr)  S <- S + log(min(nijtu[i, j, t, u], E[i, j, t, u]) /
+                                                                 max(nijtu[i, j, t, u], E[i, j, t, u]) + 1e-5)
+    stat <- -S
+  }
+  return (stat)
 }

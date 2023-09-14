@@ -27,8 +27,8 @@ Calculates the critical values of the logarithmic minimum test.
 The Critical value of the logarithmic minimum test for independence in r x c contingency table,
 }
 \examples{
-\donttest{Lms2.cv(6, 2, 93, 0.05, B = 1e3)}
-\donttest{Lms2.cv(3, 2, 150, 0.1, B = 1e3)}
+Lms2.cv(2, 2, 40, 0.05, B = 1e3)
+Lms2.cv(2, 3, 60, 0.1, B = 1e2)
 
 }
 \references{

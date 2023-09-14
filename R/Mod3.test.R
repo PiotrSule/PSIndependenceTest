@@ -18,8 +18,8 @@
 #' {Sulewski, P. (2018). \emph{Power Analysis Of Independence Testing for the Three-Way Con-tingency Tables of Small Sizes.} Journal of Applied Statistics 45(13), 2481-2498}
 #'
 #' @examples
-#' tab9 = GenTab3(array(0.125, dim = c(2, 2, 2)), 100)
-#' \donttest{Mod3.test(tab9, B = 1e3)}
+#' \donttest{Mod3.test(GenTab3(array(0.125, dim = c(2, 2, 2)), 80), B = 1e3)}
+#' Mod3.test(table4, B = 1e3)
 #'
 #' @export
 

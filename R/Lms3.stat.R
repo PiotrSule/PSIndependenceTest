@@ -19,8 +19,8 @@
 #' {Sulewski, P. (2021). \emph{Logarithmic Minimum Test for Independence in Three Way Con-tingency Table of Small Sizes,} Journal of Statistical Computation and Simulation 91(13), 2780-2799}
 #'
 #' @examples
-#' tab2 = GenTab3(array(0.125, dim = c(2, 2, 2)), 100)
-#' Lms3.stat(tab2)
+#' Lms3.stat(table3)
+#' Lms3.stat(GenTab3(array(1/12, dim=c(2,2,3)), 120))
 #'
 #' @export
 
@@ -38,7 +38,14 @@ Lms3.stat <- function(nijt) {
   for(t in 1:nt) for(i in 1:nr) for(j in 1:nc) nkjk[j] <- nkjk[j] + nijt[i,j,t]
   for(i in 1:nr) for(j in 1:nc) for(t in 1:nt) nkkt[t] <- nkkt[t] + nijt[i,j,t]
   for(t in 1:nt) for(j in 1:nc) for(i in 1:nr) E[i,j,t] <- nikk[i] * nkjk[j] * nkkt[t] / n / n
-  for(t in 1:nt) for(j in 1:nc) for(i in 1:nr)  S <- S + log(min(nijt[i, j, t], E[i, j, t]) /
-                max(nijt[i, j, t], E[i, j, t]) + 0.00001)
-  return (-S)
+
+  zero <- FALSE
+  for(t in 1:nt) for(j in 1:nc) for(i in 1:nr) if (E[i,j,t] == 0) zero <-  TRUE
+  if (zero == TRUE) stat = "Expected values must be nonzero" else {
+    S <- 0
+    for(t in 1:nt) for(j in 1:nc) for(i in 1:nr)  S <- S + log(min(nijt[i, j, t], E[i, j, t]) /
+                                                  max(nijt[i, j, t], E[i, j, t]) + 1e-5)
+    stat <- -S
+  }
+  return (stat)
 }

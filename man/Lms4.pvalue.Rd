@@ -31,9 +31,9 @@ Calculates the p-value of the Logarithmic minimum test for independence in four-
 The Critical value of the modular test for independence in r x c x t x u contingency table,
 }
 \examples{
-data = GenTab4(array(1/16, dim = c(2, 2, 2, 2)), 100)
-\donttest{Lms4.pvalue(Lms4.stat(data), 2, 2, 2, 2, 100, B=1e3)}
-\donttest{Lms4.pvalue(2.333, 2, 2, 3, 3, 200, B=1e3)}
+data = GenTab4(array(1/16, dim = c(2, 2, 2, 2)), 160)
+Lms4.pvalue(Lms4.stat(data), 2, 2, 2, 2, 160, B=1e3)
+Lms4.pvalue(Lms4.stat(table6), 2, 2, 2, 2, 160, B = 1e2)
 
 }
 \references{

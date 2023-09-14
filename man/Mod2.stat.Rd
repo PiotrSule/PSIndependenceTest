@@ -21,11 +21,9 @@ The statistic of the modular test for independence in r x c contingency table,
 see formula (2) in the article.
 }
 \examples{
-pij=matrix(1/12, nrow = 3, ncol = 4)
-tab5=GenTab2(pij, 60)
+tab5=GenTab2(matrix(1/12, nrow = 3, ncol = 4), 60)
 Mod2.stat(tab5)
-iris$size <- ifelse(iris$Sepal.Length < median(iris$Sepal.Length),"small", "big")
-Mod2.stat(table(iris$Species, iris$size))
+Mod2.stat(table1)
 
 }
 \references{

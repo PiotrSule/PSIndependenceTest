@@ -29,9 +29,9 @@ Calculates the p-value of the modular test for independence in three-way conting
 The Critical value of the modular test for independence in r x c x t contingency table,
 }
 \examples{
-tab7 = GenTab3(array(0.125, dim = c(2, 2, 2)), 100)
-\donttest{Mod3.pvalue(Mod3.stat(tab7), 2, 2, 2, 100, B = 1e3)}
-\donttest{Mod3.pvalue(1.333, 2, 3, 4, 200, B = 1e3)}
+data = GenTab3(array(0.125, dim = c(2, 2, 2)), 80)
+Mod3.pvalue(Mod3.stat(data), 2, 2, 2, 80, B = 1e2)
+Mod3.pvalue(Mod3.stat(table4), 2, 2, 2, 80, B = 1e3)
 
 }
 \references{

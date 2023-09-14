@@ -28,8 +28,8 @@ The p-value of  the logarithmic minimum test for independence in r x c contingen
 data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAWElEQVR42mNgGPTAxsZmJsVqQApgmGw1yApwKcQiT7phRBuCzzCSDSHGMKINIeDNmWQlA2IigKJwIssQkHdINgxfmBBtGDEBS3KCxBc7pMQgMYE5c/AXPwAwSX4lV3pTWwAAAABJRU5ErkJggg==
 }
 \examples{
-\donttest{Lms2.pvalue(Lms2.stat(table1), 6, 2, 93, B = 1e3)}
-\donttest{Lms2.pvalue(1.949, 3, 2, 150, B=1e3)}
+Lms2.pvalue(Lms2.stat(table1), 2, 2, 40, B = 1e3)
+Lms2.pvalue(Lms2.stat(table2), 2, 3, 60, B = 1e2)
 
 }
 \references{

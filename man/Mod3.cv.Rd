@@ -30,8 +30,8 @@ Calculates the critical value of the modular test for independence in three-way 
 The Critical value of the modular test for independence in r x c x t contingency table,
 }
 \examples{
-\donttest{Mod3.cv(2, 3, 4, 200, 0.05, B = 1e3)}
-\donttest{Mod3.cv(2, 2, 2, 100, 0.1, B = 1e3)}
+Mod3.cv(2, 2, 2, 80, 0.05, B = 1e3)
+Mod3.cv(2, 2, 2, 80, 0.1)
 
 }
 \references{

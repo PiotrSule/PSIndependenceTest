@@ -21,8 +21,8 @@ The statistic of Logarithmic minimum test for independence in r x c x t continge
 see formula (6) in the article.
 }
 \examples{
-tab2 = GenTab3(array(0.125, dim = c(2, 2, 2)), 100)
-Lms3.stat(tab2)
+Lms3.stat(table3)
+Lms3.stat(GenTab3(array(1/12, dim=c(2,2,3)), 120))
 
 }
 \references{

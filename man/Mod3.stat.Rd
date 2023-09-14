@@ -21,8 +21,8 @@ The statistic of the modular test for independence in r x c x t contingency tabl
 see formula (6) in the article.
 }
 \examples{
-tab8 = GenTab3(array(0.125, dim = c(2, 2, 2)), 100)
-Mod3.stat(tab8)
+Mod3.stat(GenTab3(array(0.125, dim = c(2, 2, 2)), 100))
+Mod3.stat(table4)
 
 }
 \references{

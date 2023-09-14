@@ -23,8 +23,9 @@
 #' Extension of the information contained in {Sulewski, P. (2018). \emph{Power Analysis Of Independence Testing for the Three-Way Con-tingency Tables of Small Sizes.} Journal of Applied Statistics 45(13), 2481-2498}
 #'
 #' @examples
-#' \donttest{Mod4.cv(2, 2, 2, 3, 100, 0.05, B = 1e3)}
-#' \donttest{Mod4.cv(2, 3, 2, 3, 100, 0.1, B = 1e3)}
+#'
+#' Mod4.cv(2, 2, 2, 2, 160, 0.05, B = 1e2)
+#' Mod4.cv(2, 2, 2, 2, 160, 0.1, B = 1e3)
 #'
 #' @export
 

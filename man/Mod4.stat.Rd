@@ -19,8 +19,8 @@ Calculates the statistic of the modular test for independence in four-way contin
 The statistic of Logarithmic minimum test for independence in r x c x t x u contingency table,
 }
 \examples{
-data = GenTab4(array(1/16, dim = c(2, 2, 2, 2)), 100)
-Mod4.stat(data)
+Mod4.stat(GenTab4(array(1/16, dim = c(2, 2, 2, 2)), 100))
+Mod4.stat(table6)
 
 }
 \references{

@@ -29,8 +29,8 @@ The Critical value of the modular test for independence in r x c contingency tab
 see formula (2) in the article.
 }
 \examples{
-\donttest{Mod2.cv(6, 2, 93, 0.05, B = 1e3)}
-\donttest{Mod2.cv(3, 2, 150, 0.1, B = 1e3)}
+Mod2.cv(2, 2, 40, 0.05, B = 1e3)
+Mod2.cv(2, 3, 60, 0.1)
 
 }
 \references{

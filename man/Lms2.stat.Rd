@@ -20,10 +20,8 @@ The statistic of the logarithmic minimum test for independence in r x c continge
 see formula (4) and example 3 in the article.
 }
 \examples{
-pij=matrix(1/6, nrow = 2, ncol = 3)
-Lms2.stat(GenTab2(pij, 50))
-iris$size <- ifelse(iris$Sepal.Length < median(iris$Sepal.Length),"small", "big")
-Lms2.stat(table(iris$Species, iris$size))
+Lms2.stat(table1)
+Lms2.stat(table2)
 
 }
 \references{

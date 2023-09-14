@@ -21,8 +21,8 @@
 #' {Sulewski, P. (2019). \emph{The LMS for Testing Independence in Two-way Contingency Tables.} Biometrical Letters 56(1), 17-43}
 #'
 #' @examples
-#' \donttest{Lms2.pvalue(Lms2.stat(table1), 6, 2, 93, B = 1e3)}
-#' \donttest{Lms2.pvalue(1.949, 3, 2, 150, B=1e3)}
+#' Lms2.pvalue(Lms2.stat(table1), 2, 2, 40, B = 1e3)
+#' Lms2.pvalue(Lms2.stat(table2), 2, 3, 60, B = 1e2)
 #'
 #' @export
 

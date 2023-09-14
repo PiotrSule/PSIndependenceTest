@@ -19,8 +19,8 @@ Calculates the statistic of the Logarithmic minimum test for independence in fou
 The statistic of Logarithmic minimum test for independence in r x c x t x u contingency table,
 }
 \examples{
-data = GenTab4(array(1/16, dim = c(2, 2, 2, 2)), 100)
-Lms4.stat(data)
+Lms4.stat(GenTab4(array(1/16, dim = c(2, 2, 2, 2)), 160))
+Lms4.stat(table5)
 
 }
 \references{

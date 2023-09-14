@@ -21,8 +21,8 @@
 #' {Sulewski, P. (2019). \emph{The LMS for Testing Independence in Two-way Contingency Tables.} Biometrical Letters 56(1), 17-43} #'
 #'
 #' @examples
-#' \donttest{Lms2.cv(6, 2, 93, 0.05, B = 1e3)}
-#' \donttest{Lms2.cv(3, 2, 150, 0.1, B = 1e3)}
+#' Lms2.cv(2, 2, 40, 0.05, B = 1e3)
+#' Lms2.cv(2, 3, 60, 0.1, B = 1e2)
 #'
 #' @export
 

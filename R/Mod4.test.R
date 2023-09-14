@@ -18,9 +18,8 @@
 #' Extension of the information contained in {Sulewski, P. (2018). \emph{Power Analysis Of Independence Testing for the Three-Way Con-tingency Tables of Small Sizes.} Journal of Applied Statistics 45(13), 2481-2498}
 #'
 #' @examples
-#' data = GenTab4(array(1/16, dim = c(2, 2, 2, 2)), 100)
-#' \donttest{Mod4.test(data, B = 1e3)}
-#'
+#' Mod4.test(GenTab4(array(1/16, dim = c(2, 2, 2, 2)), 160), B = 1e2)
+#' Mod4.test(table6, B = 1e2)
 #' @export
 
 Mod4.test <- function(nijtu, B = 1e4) {
