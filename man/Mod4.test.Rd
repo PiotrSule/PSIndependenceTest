@@ -21,8 +21,9 @@ Calculates the test statistic and p-value of the modular test for independence i
 The test statistic and p-value of the modular test for independence in r x c x t x u contingency table,
 }
 \examples{
-Mod4.test(GenTab4(array(1/16, dim = c(2, 2, 2, 2)), 160), B = 1e2)
-Mod4.test(table6, B = 1e2)
+\donttest{Mod4.test(GenTab4(array(1/16, dim = c(2, 2, 2, 2)), 160), B = 1e2)}
+\donttest{Mod4.test(table6, B = 1e2)}
+
 }
 \references{
 Extension of the information contained in {Sulewski, P. (2018). \emph{Power Analysis Of Independence Testing for the Three-Way Con-tingency Tables of Small Sizes.} Journal of Applied Statistics 45(13), 2481-2498}
