@@ -19,8 +19,8 @@
 #'
 #' @examples
 #' pij=matrix(1/4, nrow = 2, ncol = 2)
-#' Mod2.test(GenTab2(pij, 50), B = 1e3)
-#' Mod2.test(table1, B = 1e3)
+#' \donttest{Mod2.test(GenTab2(pij, 50), B = 1e3)}
+#' Mod2.test(table1, B = 1e2)
 #'
 #' @export
 

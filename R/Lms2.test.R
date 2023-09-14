@@ -19,7 +19,7 @@
 #'
 #' @examples
 #' Lms2.test(GenTab2(matrix(1/6, nrow = 2, ncol = 3), 50), B = 1e2)
-#' Lms2.test(table2, B = 1e3)
+#' \donttest{Lms2.test(table2, B = 1e3)}
 #'
 #' @export
 

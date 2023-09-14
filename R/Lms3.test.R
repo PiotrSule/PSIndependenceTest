@@ -18,8 +18,8 @@
 #' {Sulewski, P. (2021). \emph{Logarithmic Minimum Test for Independence in Three Way Con-tingency Table of Small Sizes,} Journal of Statistical Computation and Simulation 91(13), 2780-2799}
 #'
 #' @examples
-#' Lms3.test(GenTab3(array(0.125, dim = c(2, 2, 2)), 80), B = 1e2)
-#' Lms3.test(table4, B = 1e3)
+#' \donttest{Lms3.test(GenTab3(array(0.125, dim = c(2, 2, 2)), 80), B = 1e2)}
+#' \donttest{Lms3.test(table4, B = 1e3)}
 #'
 #' @export
 
